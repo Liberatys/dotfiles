@@ -60,8 +60,7 @@
       };
     };
 
-    networking.wireless.networks
-      networking = {
+    networking = {
       wireless = {
         enable = true;
       };
