@@ -20,10 +20,6 @@ with lib;
       desktopManager.xterm.enable = true;
 
       displayManager = {
-        autoLogin = {
-          enable = true;
-          user = config.dotfiles.params.username;
-        };
         lightdm = {
           enable = true;
           greeter.enable = false;

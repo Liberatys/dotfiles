@@ -35,10 +35,19 @@
       };
     };
 
-    networking = {
-      networkmanager = {
-        enable = true;
+    boot = {
+      loader = {
+        systemd-boot = {
+          enable = true;
+        };
+        efi = {
+          canTouchEfiVariables = true;
+        };
       };
+    };
+
+    sound = {
+      enable = true;
     };
 
     virtualisation = {
@@ -48,6 +57,12 @@
         autoPrune = {
           enable = true;
         };
+      };
+    };
+
+    networking = {
+      wireless = {
+        enable = true;
       };
     };
 
