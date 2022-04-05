@@ -29,13 +29,6 @@ with pkgs.lib;
       };
     };
 
-    nix = {
-      # Enable new nixos unified command
-      extraOptions = ''
-        extra-experimental-features = nix-command
-      '';
-    };
-
     services = {
       earlyoom = {
         enable = true;
