@@ -13,9 +13,9 @@
         videoDrivers = [ "nvidia" ];
       };
 
-      blueman = {
-        enable = true;
-      };
+      # blueman = {
+      #   enable = true;
+      # };
 
       xserver = {
         displayManager = {
@@ -29,11 +29,11 @@
       };
     };
 
-    hardware = {
-      bluetooth = {
-        enable = true;
-      };
-    };
+    # hardware = {
+    #   bluetooth = {
+    #     enable = true;
+    #   };
+    # };
 
     boot = {
       loader = {
