@@ -3,10 +3,7 @@ bashert_path = "machines/bashert/configuration.nix"
 lorem_path = "machines/bashert/configuration.nix"
 
 build:
-	sudo nixos-rebuild switch -I nixos-config=$(current_dir)/$(bashert_path)
-
-build-lorem:
-	sudo nixos-rebuild switch -I nixos-config=$(current_dir)/$(lorem_path)
+	sudo nixos-rebuild switch
 
 lint:
 	nix-env -i nixpkgs-fmt
@@ -26,5 +23,7 @@ gen:
 	./nix-conf --dir $(current_dir)/machines/bashert
 
 clean:
-	sudo rm /etc/nixos/configuration.nix
-	nix-collect-garbage
+	sudo nix-collect-garbage -d
+
+link:
+	sudo ln -s $(current_dir)/machines/bashert/configuration.nix /etc/nixos/configuration.nix

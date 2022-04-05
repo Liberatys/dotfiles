@@ -5,9 +5,8 @@ with pkgs.lib;
 {
   imports = [
     (import "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/master.tar.gz}/nixos")
-    (import "${builtins.fetchTarball https://github.com/NixOS/nixos-hardware/archive/master.tar.gz}/lenovo/thinkpad/x1-extreme")
+    (import "${builtins.fetchTarball https://github.com/NixOS/nixos-hardware/archive/master.tar.gz}/lenovo/thinkpad/x1-extreme/gen2")
     ./nix/dotfiles-params.nix
-    ./modules/x11.nix
   ];
 
   options = { };
@@ -42,6 +41,8 @@ with pkgs.lib;
     };
 
     hardware = {
+      enableAllFirmware = true;
+      enableRedistributableFirmware = true;
       pulseaudio = {
         enable = true;
       };

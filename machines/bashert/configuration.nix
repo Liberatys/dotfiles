@@ -3,84 +3,86 @@
 {
   imports = [
     ./../../common.nix
-    ./../../modules/x11.nix
     ./hardware-configuration.nix
   ];
 
-  config = {
-    services = {
-      xserver = {
-        videoDrivers = [ "nvidia" ];
+  # hardware = {
+  #   bluetooth = {
+  #     enable = true;
+  #   };
+  # };
+
+  boot = {
+    loader = {
+      systemd-boot = {
+        enable = true;
       };
+      efi = {
+        canTouchEfiVariables = true;
+      };
+    };
+  };
 
-      # blueman = {
-      #   enable = true;
-      # };
+  sound = {
+    enable = true;
+  };
 
-      xserver = {
-        displayManager = {
-          setupCommands = ''
-            ${pkgs.xorg.xrandr}/bin/xrandr \
-            --output HDMI-0 --mode 3840x2160 --primary \
-            --output DP-0 --mode 3840x2160 --right-of HDMI-0 \
-            || true
-          '';
-        };
+  virtualisation = {
+    docker = {
+      enable = true;
+      liveRestore = false;
+      autoPrune = {
+        enable = true;
+      };
+    };
+  };
+
+  services.xserver = {
+    videoDrivers = [ "intel" "nvidia" ];
+
+    enable = true;
+
+    desktopManager = {
+      xterm = {
+        enable = false;
       };
     };
 
-    # hardware = {
-    #   bluetooth = {
-    #     enable = true;
-    #   };
-    # };
-
-    boot = {
-      loader = {
-        systemd-boot = {
-          enable = true;
-        };
-        efi = {
-          canTouchEfiVariables = true;
-        };
+    windowManager = {
+      i3 = {
+        enable = true;
       };
     };
 
-    sound = {
+    displayManager = {
+      lightdm = {
+        enable = true;
+      };
+
+      defaultSession = "none+i3";
+    };
+  };
+
+  networking = {
+    networkmanager = {
       enable = true;
     };
+  };
 
-    virtualisation = {
-      docker = {
-        enable = true;
-        liveRestore = false;
-        autoPrune = {
-          enable = true;
-        };
-      };
-    };
+  environment.systemPackages = with pkgs; [
+    i3
+  ];
 
-    networking = {
-      wireless = {
-        enable = true;
-
-        userControlled = {
-          enable = true;
-        };
-      };
-    };
-
-    home-manager.users."${config.dotfiles.params.username}" = {
-      dotfiles = {
-        dev.enabled = true;
-        fish.enabled = true;
-        git.enabled = true;
-        qutebrowser.enabled = true;
-        wm.enabled = true;
-        workstation.enabled = true;
-        security.enabled = true;
-        admin.enabled = true;
-      };
+  home-manager.users."${config.dotfiles.params.username}" = {
+    dotfiles = {
+      dev.enabled = true;
+      fish.enabled = true;
+      git.enabled = true;
+      qutebrowser.enabled = true;
+      wm.enabled = true;
+      workstation.enabled = true;
+      security.enabled = true;
+      admin.enabled = true;
     };
   };
 }

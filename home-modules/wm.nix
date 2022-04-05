@@ -11,7 +11,6 @@ in
 
   config = mkIf config.dotfiles.wm.enabled {
     home.packages = with pkgs; [
-      i3
       betterlockscreen
       i3blocks
       dunst
@@ -31,19 +30,25 @@ in
       playerctl
     ];
 
-    home.file.".config/i3/autostart.sh" = {
-      executable = true;
-      text = ''
-        feh --bg-fill "${wallpaper}" --no-xinerama &
+    xsession = {
+      windowManager = {
+        i3 = {
+          enable = true;
+          package = pkgs.i3-gaps;
 
-        sleep 1
-        ergo &
-        keynav &
-        unclutter &
-        nm-applet &
-        parcellite &
-        pasystray
-      '';
+          config = rec {
+            modifier = "Mod4";
+            startup = [
+              {
+                command = "exec i3-msg workspace 1";
+                always = true;
+                notification = false;
+              }
+            ];
+          };
+
+        };
+      };
     };
   };
 }
