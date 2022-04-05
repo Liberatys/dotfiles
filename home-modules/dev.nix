@@ -28,7 +28,7 @@ with lib;
       meld
       lazydocker
       lazygit
-      make
+      gnumake
 
       # Documentation
       tealdeer
