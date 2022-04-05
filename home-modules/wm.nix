@@ -10,12 +10,6 @@ in
   };
 
   config = mkIf config.dotfiles.wm.enabled {
-
-    xsession = {
-      enable = true;
-      windowManager.command = "i3";
-    };
-
     home.packages = with pkgs; [
       i3
       betterlockscreen

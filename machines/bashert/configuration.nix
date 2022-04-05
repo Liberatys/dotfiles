@@ -63,6 +63,10 @@
     networking = {
       wireless = {
         enable = true;
+
+        userControlled = {
+          enabled = true;
+        };
       };
     };
 

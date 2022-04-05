@@ -24,6 +24,8 @@ with lib;
           enable = true;
           greeter.enable = false;
         };
+
+        defaultSession = "none+i3";
       };
       xkbOptions = "caps:escape";
     };
