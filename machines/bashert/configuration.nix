@@ -65,7 +65,7 @@
         enable = true;
 
         userControlled = {
-          enabled = true;
+          enable = true;
         };
       };
     };
