@@ -10,7 +10,6 @@ This is my NixOs based setup for my development environment.
 
     git clone https://github.com/Liberatys/dotfiles $HOME/dotfiles
     cd $HOME/dotfiles
-    make setup
     make clean
     make build
 
@@ -20,7 +19,6 @@ This is my NixOs based setup for my development environment.
     sudo nix-shell https://github.com/samuela/nixos-up/archive/main.tar.gz
     git clone https://github.com/Liberatys/dotfiles $HOME/dotfiles
     cd $HOME/dotfiles
-    make setup
     make clean
     make build-lorem
 
