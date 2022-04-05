@@ -5,6 +5,7 @@ with lib;
   options = {
     dotfiles.fish.enabled = mkEnableOption "fish";
   };
+
   config = mkIf config.dotfiles.fish.enabled {
     home.packages = [
       pkgs.zoxide
@@ -30,11 +31,8 @@ with lib;
       '';
       plugins = [
         { name = "fish-pure"; src = pkgs.fishPlugins.pure; }
-        {
-          name = "done";
-          src = pkgs.fishPlugins.done }
-          ];
-        };
-        };
-        }
-
+        { name = "done"; src = pkgs.fishPlugins.done; }
+      ];
+    };
+  };
+}
