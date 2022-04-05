@@ -4,6 +4,8 @@ with pkgs.lib;
 
 {
   imports = [
+    (import "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/master.tar.gz}/nixos")
+    (import "${builtins.fetchTarball https://github.com/NixOS/nixos-hardware/archive/master.tar.gz}/lenovo/thinkpad/x1-extreme")
     ./nix/dotfiles-params.nix
     ./modules/x11.nix
   ];
@@ -18,8 +20,8 @@ with pkgs.lib;
       email = "nick" + "" + ".flueckiger" + "@" + "renuo.ch";
     };
 
-
     time.timeZone = "Europe/Zurich";
+    console.keyMap = "us";
 
     programs = {
       command-not-found = {
@@ -36,6 +38,13 @@ with pkgs.lib;
 
     boot = {
       cleanTmpDir = true;
+      loader = {
+        grub = {
+          enable = true;
+          version = 2;
+          device = "/dev/sda";
+        };
+      };
     };
 
     services = {
@@ -50,23 +59,27 @@ with pkgs.lib;
       };
     };
 
+    nixpkgs = {
+      config = {
+        allowUnfree = true;
+      };
+    };
+
     users.extraUsers."${config.dotfiles.params.username}" = {
       home = "/home/${config.dotfiles.params.username}";
       isNormalUser = true;
       uid = 1000;
-      extraGroups = [ "wheel" ]
+      extraGroups = [ "wheel" "networkmanager" ]
         ++ pkgs.lib.optional config.virtualisation.docker.enable "docker"
-        ++ pkgs.lib.optional config.networking.networkmanager.enable "networkmanager"
-        ++ pkgs.lib.optional config.dotfiles.syncthing.enabled config.services.syncthing.group;
+        ++ pkgs.lib.optional config.networking.networkmanager.enable "networkmanager";
       shell = "${pkgs.fish}/bin/fish";
-      openssh.authorizedKeys.keys = [
-        config.dotfiles.params.sshKey
-      ];
+      passwordFile = "/etc/passwordFile-${config.dotfiles.params.username}"; # will be set during nixos-up
     };
 
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
+
       users."${config.dotfiles.params.username}" = {
         imports = [
           ./nix/dotfiles-params.nix
@@ -75,11 +88,20 @@ with pkgs.lib;
           ./home-modules/wm.nix
           ./home-modules/workstation.nix
           ./home-modules/git.nix
+          ./home-modules/dev.nix
+          ./home-modules/security.nix
+          ./home-modules/admin.nix
+          ./home-modules/mail.nix
         ];
 
-        dotfiles.params = config.dotfiles.params;
-        news.display = "silent";
+        dotfiles = {
+          params = config.dotfiles.params;
+        };
+
+        news = {
+          display = "silent";
+        };
       };
     };
-  }
-    }
+  };
+}

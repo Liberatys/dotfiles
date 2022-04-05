@@ -2,9 +2,7 @@
 
 {
   imports = [
-    ./../../common.nix
-    ./../../modules/x11.nix
-    ./hardware-configuration.nix
+    ./common.nix
   ];
 
   config = {
@@ -51,6 +49,12 @@
       };
     };
 
+    dotfiles = {
+      x11 = {
+        enable = true;
+      };
+    };
+
     home-manager.users."${config.dotfiles.params.username}" = {
       dotfiles = {
         dev.enabled = true;
@@ -60,7 +64,6 @@
         wm.enabled = true;
         workstation.enabled = true;
         security.enabled = true;
-        admin.enabled = true;
       };
     };
   };
