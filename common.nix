@@ -36,17 +36,6 @@ with pkgs.lib;
       '';
     };
 
-    boot = {
-      cleanTmpDir = true;
-      loader = {
-        grub = {
-          enable = true;
-          version = 2;
-          device = "/dev/sda";
-        };
-      };
-    };
-
     services = {
       earlyoom = {
         enable = true;
@@ -58,6 +47,14 @@ with pkgs.lib;
         enable = true;
       };
     };
+
+    hardware = {
+      pulseaudio = {
+        enable = true;
+      };
+    };
+
+    swapDevices = [{ device = "/swapfile"; size = 1024; }];
 
     nixpkgs = {
       config = {
@@ -75,6 +72,8 @@ with pkgs.lib;
       shell = "${pkgs.fish}/bin/fish";
       passwordFile = "/etc/passwordFile-${config.dotfiles.params.username}"; # will be set during nixos-up
     };
+
+    users.users.root.hashedPassword = "!";
 
     home-manager = {
       useGlobalPkgs = true;
