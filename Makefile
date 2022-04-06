@@ -26,5 +26,5 @@ gen:
 	./nix-conf --dir $(current_dir)/machines/bashert
 
 clean:
-	sudo rm /etc/nixos/configuration.nix
-	nix-collect-garbage
+	sudo rm -f /etc/nixos/configuration.nix
+	sudo nix-collect-garbage -d
