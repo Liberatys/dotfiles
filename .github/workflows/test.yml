@@ -1,11 +1,22 @@
 name: "Nix-Build"
+
 on:
   pull_request:
     branches:
       - main
+    paths:
+      - '**.nix'
+      - 'Makefile'
+      - 'nix-conf'
+      - 'nix-runner'
   push:
     branches:
       - main
+    paths:
+      - '**.nix'
+      - 'Makefile'
+      - 'nix-conf'
+      - 'nix-runner'
 jobs:
   tests:
     env:
