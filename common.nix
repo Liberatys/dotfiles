@@ -28,6 +28,8 @@ with pkgs.lib;
       };
     };
 
+    environment.pathsToLink = [ "/share/fish" ];
+
     services = {
       earlyoom = {
         enable = true;
@@ -91,7 +93,6 @@ with pkgs.lib;
           ./home-modules/security.nix
           ./home-modules/admin.nix
           ./home-modules/mail.nix
-          ./home-modules/rofi.nix
         ];
 
         dotfiles = {
