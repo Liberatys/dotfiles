@@ -13,6 +13,7 @@
   # };
 
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot = {
         enable = true;
@@ -38,7 +39,9 @@
   };
 
   services.xserver = {
-    videoDrivers = [ "intel" "nvidia" ];
+    libinput = {
+      enable = true;
+    };
 
     enable = true;
 
@@ -63,14 +66,20 @@
     };
   };
 
+  services.fwupd.enable = true;
+
   networking = {
-    networkmanager = {
+    wireless = {
       enable = true;
+      userControlled = {
+        enable = true;
+      };
     };
   };
 
   environment.systemPackages = with pkgs; [
     i3
+    wpa_supplicant_gui
   ];
 
   home-manager.users."${config.dotfiles.params.username}" = {

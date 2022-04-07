@@ -11,11 +11,11 @@ in
 
   config = mkIf config.dotfiles.wm.enabled {
     home.packages = with pkgs; [
+      i3
       betterlockscreen
       i3blocks
       dunst
       feh
-      rofi
       unclutter
       xautolock
       xfontsel
@@ -30,24 +30,11 @@ in
       playerctl
     ];
 
+    home.file.".config/i3/config".source = ../dotfiles/i3/config;
+
     xsession = {
       windowManager = {
-        i3 = {
-          enable = true;
-          package = pkgs.i3-gaps;
-
-          config = rec {
-            modifier = "Mod4";
-            startup = [
-              {
-                command = "exec i3-msg workspace 1";
-                always = true;
-                notification = false;
-              }
-            ];
-          };
-
-        };
+        command = "i3";
       };
     };
   };

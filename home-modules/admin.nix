@@ -10,6 +10,8 @@ with lib;
     home.packages = with pkgs; [
       pavucontrol
       arandr
+      lshw
+      blueman
     ];
   };
 }

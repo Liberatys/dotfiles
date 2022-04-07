@@ -5,7 +5,7 @@ with pkgs.lib;
 {
   imports = [
     (import "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/master.tar.gz}/nixos")
-    (import "${builtins.fetchTarball https://github.com/NixOS/nixos-hardware/archive/master.tar.gz}/lenovo/thinkpad/x1-extreme/gen2")
+    (import "${builtins.fetchTarball https://github.com/NixOs/nixos-hardware/archive/master.tar.gz}/lenovo/thinkpad/x1-extreme/gen2")
     ./nix/dotfiles-params.nix
   ];
 
@@ -34,6 +34,10 @@ with pkgs.lib;
         freeMemThreshold = 5;
       };
 
+      autorandr = {
+        enable = true;
+      };
+
       # Discard unused space on the filesystem
       fstrim = {
         enable = true;
@@ -46,6 +50,8 @@ with pkgs.lib;
       pulseaudio = {
         enable = true;
       };
+
+      firmware = [ pkgs.wireless-regdb ];
     };
 
     swapDevices = [{ device = "/swapfile"; size = 1024; }];
@@ -53,6 +59,7 @@ with pkgs.lib;
     nixpkgs = {
       config = {
         allowUnfree = true;
+        allowBroken = true;
       };
     };
 
@@ -61,8 +68,7 @@ with pkgs.lib;
       isNormalUser = true;
       uid = 1000;
       extraGroups = [ "wheel" "networkmanager" ]
-        ++ pkgs.lib.optional config.virtualisation.docker.enable "docker"
-        ++ pkgs.lib.optional config.networking.networkmanager.enable "networkmanager";
+        ++ pkgs.lib.optional config.virtualisation.docker.enable "docker";
       shell = "${pkgs.fish}/bin/fish";
       passwordFile = "/etc/passwordFile-${config.dotfiles.params.username}"; # will be set during nixos-up
     };
@@ -85,6 +91,7 @@ with pkgs.lib;
           ./home-modules/security.nix
           ./home-modules/admin.nix
           ./home-modules/mail.nix
+          ./home-modules/rofi.nix
         ];
 
         dotfiles = {

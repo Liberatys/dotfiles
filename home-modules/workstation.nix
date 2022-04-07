@@ -37,6 +37,7 @@ with lib;
       _1password
       bitwarden
       bitwarden-cli
+      firefox
 
       # FONTS
       (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
