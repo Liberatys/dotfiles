@@ -13,7 +13,7 @@ with lib;
       c.tabs.tabs_are_windows = True
       c.tabs.show = "multiple"
       c.statusbar.show = "in-mode"
-      c.downloads.location.directory = "~/downloads"
+      c.downloads.location.directory = "~/Downloads"
       c.content.pdfjs = True
       c.editor.command = ["alacritty", "nvim", "{}"]
       c.content.javascript.enabled = False

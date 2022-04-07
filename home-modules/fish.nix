@@ -14,6 +14,7 @@ with lib;
 
     programs.fish = {
       enable = true;
+
       shellAliases = {
         ".." = "cd ..";
         "..." = "cd ../../";
