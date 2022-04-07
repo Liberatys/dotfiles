@@ -1,11 +1,7 @@
 { config, lib, pkgs, ... }:
-let
-  color1 = "#162025";
-  color2 = "#662b37";
-  color3 = "#bfbfbf";
-
-in
 {
+  xdg.configFile."rofi/themes".source = ../themes/rofi;
+
   programs.rofi = {
     enable = true;
 
@@ -14,7 +10,8 @@ in
       columns = 2;
     };
 
-    font = "Fira Code 12";
+    font = "FiraCode Nerd Font 14";
+    theme = "rofi";
 
     package = pkgs.rofi.override {
       plugins = [ pkgs.rofi-calc pkgs.rofi-emoji ];

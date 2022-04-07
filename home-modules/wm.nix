@@ -9,7 +9,7 @@ in
   imports = [
     ./rofi.nix
   ];
-  
+
   options = {
     dotfiles.wm.enabled = mkEnableOption "wm";
   };
@@ -38,7 +38,7 @@ in
 
           startup = [
             {
-              command = "systemctl --user restart polybar";
+              command = "$HOME/.config/polybar/launch.sh";
               always = true;
               notification = false;
             }
@@ -47,9 +47,12 @@ in
       };
     };
 
+    home.file.".config/polybar".source = ../dotfiles/polybar;
+
     home.packages = with pkgs; [
       betterlockscreen
       i3blocks
+      polybar
       dunst
       feh
       unclutter
@@ -64,7 +67,6 @@ in
       libnotify
       lxappearance
       playerctl
-      polybar
     ];
   };
 }

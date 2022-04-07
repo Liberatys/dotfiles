@@ -22,6 +22,9 @@
     fwupd = {
       enable = true;
     };
+    blueman = {
+      enable = true;
+    };
   };
 
   boot = {
@@ -81,6 +84,13 @@
           enable = true;
         };
       };
+    };
+  };
+
+  systemd = {
+    services = {
+      upower.enable = true;
+      polybar.enable = true;
     };
   };
 }

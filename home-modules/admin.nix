@@ -11,7 +11,6 @@ with lib;
       pavucontrol
       arandr
       lshw
-      blueman
     ];
   };
 }
