@@ -38,7 +38,7 @@ in
 
           startup = [
             {
-              command = "$HOME/.config/polybar/launch.sh";
+              command = "$HOME/.config/polybar/launch.sh --docky";
               always = true;
               notification = false;
             }

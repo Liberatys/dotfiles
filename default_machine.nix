@@ -88,15 +88,6 @@
 
       lightdm = {
         enable = true;
-        greeters = {
-          pantheon = {
-            enable = true;
-          };
-
-          gtk = {
-            enable = false;
-          };
-        };
 
         greeter = {
           enable = true;

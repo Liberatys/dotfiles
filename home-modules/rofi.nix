@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 {
-  xdg.configFile."rofi/themes".source = ../themes/rofi;
+  home.file.".config/rofi/rofi.rasi".source = ../themes/rofi/rofi.rasi;
 
   programs.rofi = {
     enable = true;
