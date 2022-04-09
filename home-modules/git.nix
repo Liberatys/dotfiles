@@ -34,6 +34,9 @@ with lib;
         init = {
           defaultBranch = "main";
         };
+        core = {
+          editor = "nvim";
+        };
         "pull" = {
           ff = "only";
         };

@@ -7,6 +7,13 @@ with lib;
     dotfiles.dev.enabled = mkEnableOption "dev";
   };
   config = mkIf config.dotfiles.dev.enabled {
+
+    services = {
+      lorri = {
+        enable = true;
+      };
+    };
+
     home.packages = with pkgs; [
 
       # Services
@@ -17,12 +24,11 @@ with lib;
       # CLI / Terminal
       alacritty
       fzf
-      neovim
       ranger
       rclone
       ripgrep
       rsync
-      tmux
+      mcfly
 
       # Workflow
       meld

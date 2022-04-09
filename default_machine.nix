@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./nix/neovim-overlay.nix
+  ];
+
   hardware = {
     bluetooth = {
       enable = true;
@@ -9,13 +13,17 @@
     opengl = {
       enable = true;
     };
+
+    pulseaudio = {
+      enable = true;
+    };
   };
 
   environment.systemPackages = with pkgs; [
-    neovim
     curl
     wget
     wpa_supplicant_gui
+    asdf-vm
   ];
 
   services = {
@@ -80,6 +88,16 @@
 
       lightdm = {
         enable = true;
+        greeters = {
+          pantheon = {
+            enable = true;
+          };
+
+          gtk = {
+            enable = false;
+          };
+        };
+
         greeter = {
           enable = true;
         };

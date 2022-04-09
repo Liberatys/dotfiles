@@ -20,6 +20,8 @@ with lib;
         "..." = "cd ../../";
         "...." = "cd ../../../";
         "....." = "cd ../../../../";
+        "lg" = "lazygit";
+        "ld" = "lazydocker";
       };
       shellAbbrs = {
         g = "git";
@@ -27,12 +29,14 @@ with lib;
       shellInit = ''
         zoxide init fish | source
         any-nix-shell fish --info-right | source
+        direnv hook fish | source
 
         set -e fish_greeting
       '';
       plugins = [
         { name = "fish-pure"; src = pkgs.fishPlugins.pure; }
         { name = "done"; src = pkgs.fishPlugins.done; }
+        { name = "fzf"; src = pkgs.fishPlugins.fzf-fish; }
       ];
     };
   };

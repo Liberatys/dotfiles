@@ -33,6 +33,7 @@ with lib;
       # Services
       gist
       slack
+      slack-term
       zoom-us
       _1password
       bitwarden
@@ -51,7 +52,6 @@ with lib;
       cpufrequtils
       cpulimit
       curl
-      direnv
       dnsutils
       dos2unix
       fd
