@@ -29,6 +29,8 @@ with lib;
       # TOOLS
       whois
       bandwhich
+      s-tui
+      entr
 
       # Services
       gist

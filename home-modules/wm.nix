@@ -42,12 +42,18 @@ in
               always = true;
               notification = false;
             }
+            {
+              command = "setxkbmap -option \"caps:escape\"";
+              always = true;
+              notification = false;
+            }
           ];
         };
       };
     };
 
     home.file.".config/polybar".source = ../dotfiles/polybar;
+    home.file.".config/ranger".source = ../dotfiles/ranger;
 
     home.packages = with pkgs; [
       betterlockscreen

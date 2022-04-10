@@ -19,13 +19,21 @@ require('packer').startup(function(use)
 	use 'chentau/marks.nvim'
 	use 'ggandor/lightspeed.nvim'
 	use 'nvim-telescope/telescope.nvim'
-	use 'ray-x/navigator.lua'
+    use 'neovim/nvim-lspconfig'
+    use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
 	use 'folke/tokyonight.nvim'
 	use 'lewis6991/gitsigns.nvim'
 	use 'sindrets/diffview.nvim'
 	use 'nvim-lualine/lualine.nvim'
+    use "lukas-reineke/indent-blankline.nvim"
 	use 'yamatsum/nvim-cursorline'
 	use 'luukvbaal/stabilize.nvim'
+    use {
+        'gelguy/wilder.nvim',
+        config = function()
+            -- config goes here
+        end,
+    }
 
 	-- Documentation / Documents
 	use 'davidgranstrom/nvim-markdown-preview'
@@ -68,6 +76,12 @@ require('packer').startup(function(use)
 	-- UI
 	use {'nvim-telescope/telescope-fzf-native.nvim', run = "make"}
 	use 'mhinz/vim-startify'
+
+    -- Completion
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/nvim-cmp'
 
 
 	if packer_bootstrap then

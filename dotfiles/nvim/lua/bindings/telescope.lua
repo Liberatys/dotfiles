@@ -1,0 +1,17 @@
+vim.api.nvim_set_keymap("", "<C-f>", ":lua require('telescope.builtin').git_files(require('telescope.themes').get_ivy({}))<CR>", {})
+vim.api.nvim_set_keymap("", "<C-m>", ":lua require('telescope.builtin').treesitter()<CR>", {})
+vim.api.nvim_set_keymap("", "<C-q>", ":lua require('telescope.builtin').live_grep()<CR>", {})
+vim.api.nvim_set_keymap("", "<leader>e", ":lua require('telescope.builtin').grep_string()<CR>", {})
+vim.api.nvim_set_keymap("", "<leader>a", ":lua require('telescope.builtin').lsp_code_actions()<CR>", {})
+vim.api.nvim_set_keymap("", "<leader>bb", ":lua require('telescope.builtin').buffers()<CR>", {})
+vim.api.nvim_set_keymap("", "<leader>cc", ":lua require('telescope.builtin').commands()<CR>", {})
+vim.api.nvim_set_keymap("", "<leader>h", ":lua require('telescope.builtin').help_tags()<CR>", {})
+vim.api.nvim_set_keymap("", "<leader>lv", ":lua require('telescope.builtin').registers()<CR>", {})
+vim.api.nvim_set_keymap("", "<leader>ss", ":lua require('telescope.builtin').spell_suggest()<CR>", {})
+vim.api.nvim_set_keymap("", "<C-G>", ":lua require('telescope.builtin').git_commits()<CR>", {})
+vim.api.nvim_set_keymap("", "<leader>ff", ":vim.lsp.buf.formatting()<CR>", {})
+vim.api.nvim_set_keymap("", "<leader>sp", ":lua require('spectre').open_file_search()<CR>", {})
+
+
+vim.api.nvim_set_keymap("", "<leader>F", ":Format<CR>", {})
+vim.api.nvim_set_keymap("", "<leader>S", ":lua require('spectre').open()<CR>", {})

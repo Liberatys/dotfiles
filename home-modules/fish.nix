@@ -30,8 +30,9 @@ with lib;
         zoxide init fish | source
         any-nix-shell fish --info-right | source
         direnv hook fish | source
-
-        set -e fish_greeting
+      '';
+      interactiveShellInit = ''
+        fish_add_path $HOME/.cargo/bin
       '';
       plugins = [
         { name = "fish-pure"; src = pkgs.fishPlugins.pure; }

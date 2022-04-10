@@ -22,8 +22,16 @@ mod: {
   "${mod}+Shift+K" = "focus up";
   "${mod}+Shift+L" = "focus right";
 
-  "${mod}+Shift+Left" = "move left";
-  "${mod}+Shift+Down" = "move down";
-  "${mod}+Shift+Up" = "move up";
-  "${mod}+Shift+Right" = "move right";
+  "${mod}+Left" = "move left";
+  "${mod}+Down" = "move down";
+  "${mod}+Up" = "move up";
+  "${mod}+Right" = "move right";
+
+  "${mod}+Shift+1" = "move container to workspace 1";
+  "${mod}+Shift+2" = "move container to workspace 2";
+  "${mod}+Shift+3" = "move container to workspace 3";
+  "${mod}+Shift+4" = "move container to workspace 4";
+  "${mod}+Shift+5" = "move container to workspace 5";
+  "${mod}+Shift+6" = "move container to workspace 6";
+  "${mod}+Shift+7" = "move container to workspace 7";
 }

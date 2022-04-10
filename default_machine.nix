@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
@@ -8,6 +8,10 @@
   hardware = {
     bluetooth = {
       enable = true;
+    };
+
+    nvidia = {
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
 
     opengl = {
@@ -21,10 +25,16 @@
 
   environment.systemPackages = with pkgs; [
     curl
+    tpacpi-bat
     wget
     wpa_supplicant_gui
     asdf-vm
+    alttab
   ];
+
+  environment.variables = {
+    EDITOR = "nvim";
+  };
 
   services = {
     fwupd = {
@@ -63,6 +73,11 @@
   };
 
   services.xserver = {
+    videoDrivers = [ "displaylink" "modesetting" "nvidia" ];
+
+    autoRepeatDelay = 300;
+    autoRepeatInterval = 200;
+
     libinput = {
       enable = true;
     };
@@ -85,6 +100,12 @@
           start = ''exec $HOME/.xsession'';
         }
       ];
+
+
+      sessionCommands = ''
+        ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
+      '';
+
 
       lightdm = {
         enable = true;

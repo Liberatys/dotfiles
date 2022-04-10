@@ -14,6 +14,11 @@ with lib;
       };
     };
 
+    home.sessionVariables = {
+      DIRENV_LOG_FORMAT = "";
+      EDITOR = "nvim";
+    };
+
     home.packages = with pkgs; [
 
       # Services
@@ -24,6 +29,7 @@ with lib;
       # CLI / Terminal
       alacritty
       fzf
+      so
       ranger
       rclone
       ripgrep
@@ -46,9 +52,17 @@ with lib;
 
       ## Rust
       rustup
+      crate2nix
+      pkg-config
+
+      # Markdown
+      glow
 
       ## GO
       go
+
+      # CC
+      gcc
 
       ## Python
       python37
