@@ -7,8 +7,14 @@ with lib;
   };
 
   config = mkIf config.dotfiles.mail.enabled {
-
     programs = {
+
+      neomutt = {
+        enable = true;
+
+        vimKeys = true;
+      };
+
       notmuch = {
         enable = true;
         hooks = {

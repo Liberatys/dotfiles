@@ -20,6 +20,10 @@ with lib;
         "..." = "cd ../../";
         "...." = "cd ../../../";
         "....." = "cd ../../../../";
+        "lg" = "lazygit";
+        "ld" = "lazydocker";
+        "e" = "nvim";
+        "cr" = "cargo run";
       };
       shellAbbrs = {
         g = "git";

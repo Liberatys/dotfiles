@@ -33,6 +33,9 @@
       workstation.enabled = true;
       security.enabled = true;
       admin.enabled = true;
+      nvim.enabled = true;
+      mail.enabled = true;
+      tmux.enabled = true;
     };
   };
 }

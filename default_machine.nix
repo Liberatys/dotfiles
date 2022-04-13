@@ -55,6 +55,11 @@
   };
 
   services.xserver = {
+    videoDrivers = [ "displaylink" "modesetting" "nvidia" ];
+
+    autoRepeatDelay = 200;
+    autoRepeatInterval = 50;
+
     libinput = {
       enable = true;
     };
