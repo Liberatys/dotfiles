@@ -93,6 +93,8 @@ with pkgs.lib;
           ./home-modules/security.nix
           ./home-modules/admin.nix
           ./home-modules/mail.nix
+          ./home-modules/neovim.nix
+          ./home-modules/tmux.nix
         ];
 
         dotfiles = {

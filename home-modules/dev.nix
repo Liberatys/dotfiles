@@ -7,6 +7,18 @@ with lib;
     dotfiles.dev.enabled = mkEnableOption "dev";
   };
   config = mkIf config.dotfiles.dev.enabled {
+
+    services = {
+      lorri = {
+        enable = true;
+      };
+    };
+
+    home.sessionVariables = {
+      DIRENV_LOG_FORMAT = "";
+      EDITOR = "nvim";
+    };
+
     home.packages = with pkgs; [
 
       # Services
@@ -17,12 +29,12 @@ with lib;
       # CLI / Terminal
       alacritty
       fzf
-      neovim
+      so
       ranger
       rclone
       ripgrep
       rsync
-      tmux
+      mcfly
 
       # Workflow
       meld
@@ -40,9 +52,17 @@ with lib;
 
       ## Rust
       rustup
+      crate2nix
+      pkg-config
+
+      # Markdown
+      glow
 
       ## GO
       go
+
+      # CC
+      gcc
 
       ## Python
       python37

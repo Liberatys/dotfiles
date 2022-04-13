@@ -15,7 +15,7 @@ with lib;
 
     programs.git = {
       enable = true;
-      userName = config.dotfiles.params.fullname;
+      userName = config.dotfiles.params.username;
       userEmail = config.dotfiles.params.email;
       aliases = {
         co = "checkout";
@@ -33,6 +33,9 @@ with lib;
       extraConfig = {
         init = {
           defaultBranch = "main";
+        };
+        core = {
+          editor = "nvim";
         };
         "pull" = {
           ff = "only";

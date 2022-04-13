@@ -38,7 +38,12 @@ in
 
           startup = [
             {
-              command = "$HOME/.config/polybar/launch.sh";
+              command = "$HOME/.config/polybar/launch.sh --docky";
+              always = true;
+              notification = false;
+            }
+            {
+              command = "setxkbmap -option \"caps:escape\"";
               always = true;
               notification = false;
             }
@@ -48,6 +53,7 @@ in
     };
 
     home.file.".config/polybar".source = ../dotfiles/polybar;
+    home.file.".config/ranger".source = ../dotfiles/ranger;
 
     home.packages = with pkgs; [
       betterlockscreen

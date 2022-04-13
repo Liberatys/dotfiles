@@ -28,3 +28,6 @@ clean:
 
 link:
 	sudo ln -s $(current_dir)/machines/bashert/configuration.nix /etc/nixos/configuration.nix
+
+deps:
+	bash ./pkgs/asdf-plugins

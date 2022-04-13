@@ -1,22 +1,40 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
+  imports = [
+    ./nix/neovim-overlay.nix
+  ];
+
   hardware = {
     bluetooth = {
       enable = true;
     };
 
+    nvidia = {
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+    };
+
     opengl = {
+      enable = true;
+    };
+
+    pulseaudio = {
       enable = true;
     };
   };
 
   environment.systemPackages = with pkgs; [
-    neovim
     curl
+    tpacpi-bat
     wget
     wpa_supplicant_gui
+    asdf-vm
+    alttab
   ];
+
+  environment.variables = {
+    EDITOR = "nvim";
+  };
 
   services = {
     fwupd = {
@@ -83,8 +101,15 @@
         }
       ];
 
+
+      sessionCommands = ''
+        ${lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
+      '';
+
+
       lightdm = {
         enable = true;
+
         greeter = {
           enable = true;
         };

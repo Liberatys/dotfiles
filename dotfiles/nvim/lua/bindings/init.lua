@@ -1,0 +1,6 @@
+require("bindings.general")
+require("bindings.telescope")
+require("bindings.tools")
+require("bindings.movement")
+require("bindings.testing")
+require("bindings.terminal")

@@ -31,12 +31,15 @@ with lib;
       shellInit = ''
         zoxide init fish | source
         any-nix-shell fish --info-right | source
-
-        set -e fish_greeting
+        direnv hook fish | source
+      '';
+      interactiveShellInit = ''
+        fish_add_path $HOME/.cargo/bin
       '';
       plugins = [
         { name = "fish-pure"; src = pkgs.fishPlugins.pure; }
         { name = "done"; src = pkgs.fishPlugins.done; }
+        { name = "fzf"; src = pkgs.fishPlugins.fzf-fish; }
       ];
     };
   };

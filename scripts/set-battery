@@ -1,0 +1,2 @@
+sudo tpacpi-bat -s ST 1 15 # load internal battery when below 15%
+sudo tpacpi-bat -s SP 1 95 # stop charging at 95%
