@@ -36,6 +36,7 @@
       nvim.enabled = true;
       mail.enabled = true;
       tmux.enabled = true;
+      vscode.enabled = true;
     };
   };
 }

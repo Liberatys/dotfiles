@@ -8,7 +8,7 @@ with lib;
 
   config = mkIf config.dotfiles.vscode.enabled {
 
-    programs = {
+    programs.vscode = {
       enable = true;
 
       userSettings = {
@@ -18,11 +18,21 @@ with lib;
       keybindings = [
       ];
 
-      extensions = with pkgs; [
-        vscode-extensions.golang.go
-        vscode-extensions.bbenoist.nix
-        vscode-extensions.vscodevim.vim
-        vscode-extensions.vspacecode.whichkey
+      extensions = with pkgs.vscode-extensions; [
+        golang.go
+        pkief.material-icon-theme
+        yzhang.markdown-all-in-one
+        ms-python.python
+        editorconfig.editorconfig
+        eamodio.gitlens
+        dbaeumer.vscode-eslint
+        james-yu.latex-workshop
+        bbenoist.nix
+        vscodevim.vim
+        vspacecode.whichkey
+        jdinhlife.gruvbox
+        github.vscode-pull-request-github
+        ms-azuretools.vscode-docker
       ];
     };
   };
