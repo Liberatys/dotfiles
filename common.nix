@@ -105,6 +105,7 @@ with pkgs.lib;
           ./home-modules/mail.nix
           ./home-modules/neovim.nix
           ./home-modules/tmux.nix
+          ./home-modules/emacs.nix
           ./home-modules/vscode.nix
         ];
 
