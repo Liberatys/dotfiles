@@ -24,7 +24,7 @@ with lib;
         "cb" = "cargo build";
         "cr" = "cargo run";
         "e" = "nvim";
-        "f" = "emacsclient -c -a emacs";
+        "f" = "emacsclient -c";
         "gcs" = "git commit -s";
         "gl" = "git pull";
         "gp" = "git push";
