@@ -20,16 +20,24 @@ with lib;
         "..." = "cd ../../";
         "...." = "cd ../../../";
         "....." = "cd ../../../../";
-        "lg" = "lazygit";
-        "ld" = "lazydocker";
-        "e" = "nvim";
+        "ber" = "bundle exec rspec";
+        "cb" = "cargo build";
         "cr" = "cargo run";
+        "e" = "nvim";
+        "gcs" = "git commit -s";
+        "gl" = "git pull";
+        "gp" = "git push";
+        "j" = "z";
+        "l" = "exa -a --icons --colour always";
+        "ld" = "lazydocker";
+        "lg" = "lazygit";
       };
       shellAbbrs = {
         g = "git";
       };
       shellInit = ''
         zoxide init fish | source
+        mcfly init fish | source
         any-nix-shell fish --info-right | source
         direnv hook fish | source
       '';

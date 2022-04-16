@@ -21,7 +21,7 @@ require('packer').startup(function(use)
 	use 'nvim-telescope/telescope.nvim'
     use 'neovim/nvim-lspconfig'
     use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
-	use 'folke/tokyonight.nvim'
+    use { "ellisonleao/gruvbox.nvim" }
 	use 'lewis6991/gitsigns.nvim'
 	use 'sindrets/diffview.nvim'
 	use 'nvim-lualine/lualine.nvim'
@@ -72,7 +72,6 @@ require('packer').startup(function(use)
 	use 'vim-crystal/vim-crystal'
 	use {'tpope/vim-rails', ft = "ruby"}
 
-
 	-- UI
 	use {'nvim-telescope/telescope-fzf-native.nvim', run = "make"}
 	use 'mhinz/vim-startify'
@@ -82,7 +81,6 @@ require('packer').startup(function(use)
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/nvim-cmp'
-
 
 	if packer_bootstrap then
 		require('packer').sync()

@@ -24,6 +24,10 @@ with lib;
       };
       delta = {
         enable = true;
+
+        options = {
+          side-by-side = true;
+        };
       };
       ignores = [
         ".envrc"

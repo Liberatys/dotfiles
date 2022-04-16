@@ -75,6 +75,16 @@ with pkgs.lib;
       passwordFile = "/etc/passwordFile-${config.dotfiles.params.username}"; # will be set during nixos-up
     };
 
+    services = {
+      postgresql = {
+        enable = true;
+        package = pkgs.postgresql_11;
+      };
+      redis = {
+        enable = true;
+      };
+    };
+
     users.users.root.hashedPassword = "!";
 
     home-manager = {

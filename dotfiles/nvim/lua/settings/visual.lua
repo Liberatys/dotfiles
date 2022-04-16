@@ -7,4 +7,6 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 vim.o.showmode = false
 
-vim.cmd[[colorscheme tokyonight]]
+vim.opt.termguicolors = true
+vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])

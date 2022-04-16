@@ -31,6 +31,8 @@ with lib;
       fzf
       so
       ranger
+      exa
+      bottom
       rclone
       ripgrep
       rsync
