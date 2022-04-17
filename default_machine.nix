@@ -68,6 +68,7 @@
       liveRestore = false;
       autoPrune = {
         enable = true;
+        dates = "weekly";
       };
     };
   };
@@ -76,7 +77,7 @@
     videoDrivers = [ "displaylink" "modesetting" "nvidia" ];
 
     autoRepeatDelay = 200;
-    autoRepeatInterval = 50;
+    autoRepeatInterval = 35;
 
     libinput = {
       enable = true;

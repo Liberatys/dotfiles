@@ -20,7 +20,6 @@ with lib;
     };
 
     home.packages = with pkgs; [
-
       # Services
       gist
       kubectl
@@ -32,11 +31,13 @@ with lib;
       so
       ranger
       exa
+      cookiecutter
       bottom
       rclone
       ripgrep
       rsync
       mcfly
+      nodePackages.zx
 
       # Workflow
       meld
@@ -74,6 +75,8 @@ with lib;
       nix-prefetch
       patchelf
       nix-top
+      nix-prefetch-git
+      node2nix
       nix-tree
       niv
       nixpkgs-fmt

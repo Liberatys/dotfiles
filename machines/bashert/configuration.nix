@@ -37,6 +37,7 @@
       mail.enabled = true;
       tmux.enabled = true;
       vscode.enabled = true;
+      emacs.enabled = true;
     };
   };
 }

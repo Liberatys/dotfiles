@@ -24,6 +24,7 @@ with lib;
         "cb" = "cargo build";
         "cr" = "cargo run";
         "e" = "nvim";
+        "f" = "emacsclient -c";
         "gcs" = "git commit -s";
         "gl" = "git pull";
         "gp" = "git push";
@@ -43,6 +44,7 @@ with lib;
       '';
       interactiveShellInit = ''
         fish_add_path $HOME/.cargo/bin
+        fish_add_path $HOME/dotfiles/scripts
       '';
       plugins = [
         { name = "fish-pure"; src = pkgs.fishPlugins.pure; }

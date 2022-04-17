@@ -28,6 +28,10 @@ with pkgs.lib;
       };
     };
 
+    location = {
+      provider = "geoclue2";
+    };
+
     environment.pathsToLink = [ "/share/fish" ];
 
     services = {
@@ -65,11 +69,20 @@ with pkgs.lib;
       };
     };
 
+    nix = {
+      trustedUsers = [ "root" "liberatys" ];
+
+      gc = {
+        automatic = true;
+        dates = "weekly";
+      };
+    };
+
     users.extraUsers."${config.dotfiles.params.username}" = {
       home = "/home/${config.dotfiles.params.username}";
       isNormalUser = true;
       uid = 1000;
-      extraGroups = [ "wheel" "networkmanager" ]
+      extraGroups = [ "wheel" "networkmanager" "docker" ]
         ++ pkgs.lib.optional config.virtualisation.docker.enable "docker";
       shell = "${pkgs.fish}/bin/fish";
       passwordFile = "/etc/passwordFile-${config.dotfiles.params.username}"; # will be set during nixos-up
@@ -105,6 +118,7 @@ with pkgs.lib;
           ./home-modules/mail.nix
           ./home-modules/neovim.nix
           ./home-modules/tmux.nix
+          ./home-modules/emacs.nix
           ./home-modules/vscode.nix
         ];
 

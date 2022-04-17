@@ -11,6 +11,7 @@ with lib;
       pavucontrol
       arandr
       lshw
+      guvcview
     ];
   };
 }
