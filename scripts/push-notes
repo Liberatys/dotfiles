@@ -1,0 +1,9 @@
+cd $HOME/notes
+
+git add .
+
+resin
+
+git push
+
+cd -

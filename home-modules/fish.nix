@@ -32,6 +32,9 @@ with lib;
         "l" = "exa -a --icons --colour always";
         "ld" = "lazydocker";
         "lg" = "lazygit";
+        "nn" = "cd $HOME/notes";
+        "ne" = "cd $HOME/notes/README.org";
+        "np" = "push-notes"
       };
       shellAbbrs = {
         g = "git";

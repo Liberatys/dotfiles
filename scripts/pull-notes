@@ -1,0 +1,5 @@
+cd $HOME/notes
+
+git pull
+
+cd -
