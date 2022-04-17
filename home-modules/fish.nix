@@ -34,7 +34,7 @@ with lib;
         "lg" = "lazygit";
         "nn" = "cd $HOME/notes";
         "ne" = "cd $HOME/notes/README.org";
-        "np" = "push-notes"
+        "np" = "push-notes";
       };
       shellAbbrs = {
         g = "git";
