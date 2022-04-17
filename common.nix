@@ -28,6 +28,10 @@ with pkgs.lib;
       };
     };
 
+    location = {
+      provider = "geoclue2";
+    };
+
     environment.pathsToLink = [ "/share/fish" ];
 
     services = {

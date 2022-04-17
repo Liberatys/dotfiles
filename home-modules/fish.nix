@@ -44,6 +44,7 @@ with lib;
       '';
       interactiveShellInit = ''
         fish_add_path $HOME/.cargo/bin
+        fish_add_path $HOME/dotfiles/scripts
       '';
       plugins = [
         { name = "fish-pure"; src = pkgs.fishPlugins.pure; }

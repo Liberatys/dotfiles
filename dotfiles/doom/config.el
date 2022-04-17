@@ -4,6 +4,8 @@
 (setq user-mail-address "nick.anthony.flueckiger@hey.com")
 
 (setq doom-theme 'doom-gruvbox)
+(setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 15 :weight 'light)
+      doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font Mono" :size 15))
 (setq notes-base "~/notes")
 
 (setq org-base-path notes-base)

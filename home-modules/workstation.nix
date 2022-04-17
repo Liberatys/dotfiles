@@ -97,9 +97,25 @@ with lib;
       zip
     ];
 
-    programs.direnv = {
+    programs = {
+      direnv = {
+        enable = true;
+        nix-direnv.enable = true;
+      };
+    };
+
+    services.redshift = {
       enable = true;
-      nix-direnv.enable = true;
+      brightness = {
+        day = "1";
+        night = "0.90";
+      };
+      temperature = {
+        day = 6500;
+        night = 3500;
+      };
+
+      provider = "geoclue2";
     };
 
     manual.manpages.enable = true;
