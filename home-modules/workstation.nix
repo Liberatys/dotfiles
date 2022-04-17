@@ -18,7 +18,6 @@ with lib;
 
       # Office
       zathura
-      texstudio
 
       # Apps
       xclip
@@ -62,7 +61,6 @@ with lib;
       findutils
       fzf
       gettext
-      ghostscript
       gnupg
       graphviz
       htop

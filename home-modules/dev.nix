@@ -47,8 +47,12 @@ with lib;
 
       # Documentation
       tealdeer
+      texlive.combined.scheme-full
 
       # Languages
+
+      ## Javascript
+      nodePackages.npm
 
       ## Ruby
       bundix

@@ -1,0 +1,10 @@
+#+TITLE: <title here>
+#+SUBTITLE: <subtitle here>
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper,11pt,twoside]
+#+OPTIONS: toc:nil H:3
+
+#+BEGIN_abstract
+
+This is the abstract of the template document and it should be replaced.
+#+END_abstract
