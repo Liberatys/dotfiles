@@ -39,6 +39,10 @@ with lib;
       mcfly
       nodePackages.zx
 
+      # DevOps / Pipelines
+      act
+      dagger
+
       # Workflow
       meld
       lazydocker
