@@ -77,7 +77,7 @@
        emacs-lisp        ; drown in parentheses
        (go +lsp)         ; the hipster dialect
        json              ; At least it ain't XML
-       (java +meghanada) ; the poster child for carpal tunnel syndrome
+       (java +lsp) ; the poster child for carpal tunnel syndrome
        (javascript +lsp +tide)        ; all(hope(abandon(ye(who(enter(here))))))
        latex             ; writing papers in Emacs has never been so fun
        (org              ; organize your plain life in plain text

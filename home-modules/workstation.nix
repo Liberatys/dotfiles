@@ -74,6 +74,7 @@ with lib;
       nload
       nmap
       openssl
+      openconnect
       pandoc
       paperkey
       pdftk
