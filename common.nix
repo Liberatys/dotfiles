@@ -120,6 +120,7 @@ with pkgs.lib;
           ./home-modules/tmux.nix
           ./home-modules/emacs.nix
           ./home-modules/vscode.nix
+          ./home-modules/remote.nix
         ];
 
         dotfiles = {

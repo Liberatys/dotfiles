@@ -25,19 +25,20 @@
 
   home-manager.users."${config.dotfiles.params.username}" = {
     dotfiles = {
+      admin.enabled = true;
       dev.enabled = true;
+      emacs.enabled = true;
       fish.enabled = true;
       git.enabled = true;
-      qutebrowser.enabled = true;
-      wm.enabled = true;
-      workstation.enabled = true;
-      security.enabled = true;
-      admin.enabled = true;
-      nvim.enabled = true;
       mail.enabled = true;
+      nvim.enabled = true;
+      qutebrowser.enabled = true;
+      remote.enabled = true;
+      security.enabled = true;
       tmux.enabled = true;
       vscode.enabled = true;
-      emacs.enabled = true;
+      wm.enabled = true;
+      workstation.enabled = true;
     };
   };
 }
