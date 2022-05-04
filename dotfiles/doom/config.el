@@ -1,26 +1,25 @@
 ;;; config.el -*- lexical-binding: t; -*-
 
+; Personal Information
 (setq user-full-name "Nick Flueckiger")
 (setq user-mail-address "nick.anthony.flueckiger@hey.com")
 
+; Themes / UI
 (setq doom-theme 'doom-gruvbox)
-
 (setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 20 :weight 'light)
       doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font Mono" :size 20))
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+; ORG
 
 (setq notes-base "~/notes")
-
 (setq org-base-path notes-base)
 (setq org-agenda-files '(notes-base))
-
 (setq org-agenda-files (list notes-base))
-
 (setq org-agenda-custom-commands
       '(("c" "Simple agenda view"
          ((agenda "")
           (alltodo "")))))
-
-(use-package! ledger-mode)
 (setq confirm-kill-emacs nil)
 
 (setq org-refile-file-path (concat org-base-path "/" "refile.org"))
@@ -34,8 +33,20 @@
 (setq default-directory org-base-path)
 (setq calendar-week-start-day 1)
 
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+; LEDGER
+(use-package! ledger-mode)
+(use-package ledger-mode
+  :ensure t
+  :init
+  (setq ledger-clear-whole-transactions 1)
 
+  :config
+  (add-to-list 'evil-emacs-state-modes 'ledger-report-mode)
+  :mode "\\.dat\\'")
+
+; General
+(display-time-mode 1)
+(doom-modeline-mode 1)
 (delete-selection-mode 1)
 
 (setq undo-limit 8000
@@ -44,11 +55,6 @@
 
 (setq evil-vsplit-window-right t
       evil-split-window-below t)
-
-(setq +ivy-buffer-preview t)
-
-(display-time-mode 1)
-(doom-modeline-mode 1)
 
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize)
@@ -84,43 +90,66 @@
 
 (setq org-agenda-span 'llllDAY)
 
-(map! :desc "Save buffer" :n "C-s" #'save-buffer)
-(map! :desc "Format Buffer" :n "C-z" #'+format/buffer)
-(map! :desc "Magit" :n "C-g" #'magit)
-(map! :desc "Agenda" :n "C-a" #'org-agenda)
-(map! :desc "Find file" :n "C-f" #'find-file)
-(map! :desc "Find fuzzy" :n "C-p" #'+default/find-file-under-here)
-(map! :desc "Treemacs" :n "C-c o" 'treemacs)
-(map! :desc "IBuffer" :n "C-c b" 'ibuffer)
-(map! :desc "Ripgrep" :n "C-q" '+vertico/project-search)
-(map! :desc "Start of line" :n "F" #'beginning-of-line)
-(map! :desc "End of line" :n "T" #'end-of-line)
+; JAVA
+(setq lsp-enable-on-type-formatting nil)
+(setq lsp-java-format-enabled nil)
 
-(global-set-key (kbd "C->") 'indent-rigidly-right-to-tab-stop)
 (global-set-key (kbd "C-<") 'indent-rigidly-left-to-tab-stop)
-
+(global-set-key (kbd "C->") 'indent-rigidly-right-to-tab-stop)
 (global-set-key (kbd "C-SPC") 'execute-extended-command)
 (global-set-key (kbd "C-a") 'normal-mode)
-
-(global-set-key (kbd "C-k") 'evil-window-up)
-(global-set-key (kbd "C-j") 'evil-window-down)
-(global-set-key (kbd "C-c j") 'org-journal-new-entry)
 (global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c j") 'org-journal-new-entry)
+(global-set-key (kbd "C-j") 'evil-window-down)
+(global-set-key (kbd "C-k") 'evil-window-up)
 (global-set-key (kbd "C-l") 'evil-window-right)
+
+(map! :desc "Agenda" :n "C-a" #'org-agenda)
+(map! :desc "End of line" :n "T" #'end-of-line)
+(map! :desc "Find file" :n "C-f" #'find-file)
+(map! :desc "Find fuzzy" :n "C-p" #'+default/find-file-under-here)
+(map! :desc "Format Buffer" :n "C-z" #'+format/buffer)
+(map! :desc "IBuffer" :n "C-c b" 'ibuffer)
+(map! :desc "Magit" :n "C-g" #'magit)
+(map! :desc "Ripgrep" :n "C-q" '+vertico/project-search)
+(map! :desc "Save buffer" :n "C-s" #'save-buffer)
+(map! :desc "Start of line" :n "F" #'beginning-of-line)
+(map! :desc "Treemacs" :n "C-c o" 'treemacs)
 
 (evilem-default-keybindings "SPC")
 
 (which-key-mode)
 
-(add-hook 'projectile-after-switch-project-hook (lambda ()
-                                                  (projectile-invalidate-cache nil)))
 (setq org-confirm-babel-evaluate nil)
 
-(use-package ledger-mode
-  :ensure t
-  :init
-  (setq ledger-clear-whole-transactions 1)
+; Projectile
+(setq projectile-enable-caching nil)
+(add-hook 'projectile-after-switch-project-hook (lambda ()
+                                                  (projectile-invalidate-cache nil)))
 
-  :config
-  (add-to-list 'evil-emacs-state-modes 'ledger-report-mode)
-  :mode "\\.dat\\'")
+; Set empty main project
+(defvar projectile-main-project nil)
+
+(defun use-main-project (&rest args)
+  "Skip calling `projectile-project-root' when there is a main project defined."
+  (when projectile-main-project
+    projectile-main-project))
+
+(defun set-main-project (&optional dir)
+  "Set the projectile main project based on the current buffer.
+  When called with argument DIR, make that main project instead."
+  (interactive)
+  (if dir
+    (setq projectile-main-project dir)
+    (let ((current-project))
+      (let ((projectile-main-project nil))
+        (setq current-project (projectile-project-root)))
+      (setq projectile-main-project current-project))))
+
+(defadvice projectile-project-root ( around use-main-project activate)
+  "Use the current main project, if any."
+  (if projectile-main-project
+      (setq ad-return-value projectile-main-project)
+      ad-do-it))
+
+(add-hook 'projectile-after-switch-project-hook (lambda ()(set-main-project)))
