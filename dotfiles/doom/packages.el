@@ -5,3 +5,5 @@
 (package! org-preview-html)
 (package! org-journal)
 (package! orgtbl-aggregate)
+(package! toc-org)
+(package! crux)
