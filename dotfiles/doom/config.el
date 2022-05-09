@@ -103,6 +103,7 @@
 (global-set-key (kbd "C-j") 'evil-window-down)
 (global-set-key (kbd "C-k") 'evil-window-up)
 (global-set-key (kbd "C-l") 'evil-window-right)
+(global-set-key (kbd "C-c w") '+workspace/switch-to)
 
 (map! :desc "Agenda" :n "C-a" #'org-agenda)
 (map! :desc "End of line" :n "T" #'end-of-line)

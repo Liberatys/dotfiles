@@ -37,6 +37,10 @@ This is my NixOs based setup for my development environment.
 
 ### Home-Modules
 
+#### Code
+
+#### Operations
+
 - [git](./home-modules/git.nix)
 - [window management](./home-modules/wm.nix)
 - [tmux](./home-modules/tmux.nix)
