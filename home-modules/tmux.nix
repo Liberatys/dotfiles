@@ -34,6 +34,7 @@ with lib;
         pkgs.tmuxPlugins.gruvbox
         pkgs.tmuxPlugins.tmux-fzf
         pkgs.tmuxPlugins.fzf-tmux-url
+        pkgs.tmuxPlugins.extrakto
       ];
     };
   };
