@@ -35,6 +35,7 @@ with lib;
         "nn" = "cd $HOME/notes";
         "ne" = "cd $HOME/notes/README.org";
         "np" = "push-notes";
+        "tr" = "terraform";
       };
       shellAbbrs = {
         g = "git";

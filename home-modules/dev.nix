@@ -24,6 +24,8 @@ with lib;
       gist
       kubectl
       awscli2
+      terraform
+      doctl
 
       # CLI / Terminal
       alacritty

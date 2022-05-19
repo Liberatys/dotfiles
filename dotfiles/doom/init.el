@@ -57,6 +57,7 @@
        (eval +overlay)     ; run code, run (also, repls)
        (lookup +dictionary)              ; navigate your code and its documentation
        lsp
+       terraform
        magit             ; a git porcelain for Emacs
        make              ; run make tasks from Emacs
        pdf               ; pdf enhancements
