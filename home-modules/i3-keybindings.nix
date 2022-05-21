@@ -12,7 +12,6 @@ mod: {
   "${mod}+e" = "layout default";
   "${mod}+g" = "exec rofi -show window";
 
-
   "${mod}+1" = "workspace 1";
   "${mod}+2" = "workspace 2";
   "${mod}+3" = "workspace 3";

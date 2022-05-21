@@ -32,7 +32,6 @@ with lib;
       entr
 
       # Services
-      gist
       slack
       slack-term
       zoom-us
@@ -59,7 +58,6 @@ with lib;
       ffmpeg
       file
       findutils
-      fzf
       gettext
       gnupg
       graphviz

@@ -16,7 +16,7 @@ with pkgs.lib;
       username = "liberatys";
       fullname = "Nick Anthony Flueckiger";
       signature = "Nick <Liberatys> Flueckiger";
-      email = "nick" + "" + ".flueckiger" + "@" + "renuo.ch";
+      email = "nick" + ".anthony" + ".flueckiger" + "@" + "hey.com";
     };
 
     time.timeZone = "Europe/Zurich";
@@ -60,7 +60,7 @@ with pkgs.lib;
       firmware = [ pkgs.wireless-regdb ];
     };
 
-    swapDevices = [{ device = "/swapfile"; size = 1024; }];
+    swapDevices = [{ device = "/swapfile"; size = 2048; }];
 
     nixpkgs = {
       config = {
@@ -121,6 +121,7 @@ with pkgs.lib;
           ./home-modules/emacs.nix
           ./home-modules/vscode.nix
           ./home-modules/remote.nix
+          ./home-modules/devops.nix
         ];
 
         dotfiles = {

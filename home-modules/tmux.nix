@@ -26,7 +26,6 @@ with lib;
         bind v split-window -h
         bind s split-window -v
 
-
         bind q killp
       '';
 

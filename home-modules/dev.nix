@@ -22,10 +22,7 @@ with lib;
     home.packages = with pkgs; [
       # Services
       gist
-      kubectl
       awscli2
-      terraform
-      doctl
 
       # CLI / Terminal
       alacritty
@@ -40,10 +37,6 @@ with lib;
       rsync
       mcfly
       nodePackages.zx
-
-      # DevOps / Pipelines
-      act
-      dagger
 
       # Workflow
       meld

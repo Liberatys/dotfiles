@@ -36,8 +36,9 @@
       remote.enabled = true;
       security.enabled = true;
       tmux.enabled = true;
-      vscode.enabled = true;
+      vscode.enabled = false;
       wm.enabled = true;
+      devops.enabled = true;
       workstation.enabled = true;
     };
   };
