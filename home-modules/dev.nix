@@ -57,6 +57,10 @@ with lib;
       # Documentation
       tealdeer
       texlive.combined.scheme-full
+      texstudio
+
+      # Communication
+      konversation
 
       # Languages
 

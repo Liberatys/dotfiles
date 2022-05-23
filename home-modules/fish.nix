@@ -57,6 +57,7 @@ with lib;
         d = "docker";
         k = "kubectl";
         p = "podman";
+        t = "tmux";
       };
       shellInit = ''
         zoxide init fish | source
