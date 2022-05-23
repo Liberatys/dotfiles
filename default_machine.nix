@@ -34,6 +34,7 @@
 
   environment.variables = {
     EDITOR = "nvim";
+    VISUAL = "emacs";
   };
 
   services = {

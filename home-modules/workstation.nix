@@ -30,6 +30,7 @@ with lib;
       bandwhich
       s-tui
       entr
+      ack
 
       # Services
       slack
@@ -73,6 +74,7 @@ with lib;
       nmap
       openssl
       openconnect
+      openfortivpn
       pandoc
       paperkey
       pdftk

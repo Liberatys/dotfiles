@@ -14,6 +14,14 @@ with lib;
       };
     };
 
+    programs = {
+      taskwarrior = {
+        enable = true;
+
+        dataLocation = "~/notes/task";
+      };
+    };
+
     home.sessionVariables = {
       DIRENV_LOG_FORMAT = "";
       EDITOR = "nvim";
@@ -28,7 +36,7 @@ with lib;
       alacritty
       fzf
       so
-      ranger
+      nnn
       exa
       cookiecutter
       bottom
@@ -37,6 +45,8 @@ with lib;
       rsync
       mcfly
       nodePackages.zx
+      pgcli
+      wuzz
 
       # Workflow
       meld

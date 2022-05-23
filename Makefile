@@ -26,6 +26,9 @@ clean:
 	sudo rm -f /etc/nixos/configuration.nix
 	sudo nix-collect-garbage -d
 
+reset: clean
+	make link
+
 link:
 	sudo ln -s $(current_dir)/machines/bashert/configuration.nix /etc/nixos/configuration.nix
 
