@@ -47,13 +47,16 @@ with lib;
         "gl" = "git pull";
         "gp" = "git push";
         "gcs" = "git commit -s";
+
         # Operations
-        "k" = "kubectl";
         "ld" = "lazydocker";
         "tr" = "terraform";
       };
       shellAbbrs = {
         g = "git";
+        d = "docker";
+        k = "kubectl";
+        p = "podman";
       };
       shellInit = ''
         zoxide init fish | source

@@ -19,6 +19,7 @@ with lib;
       kube3d
       kubeseal
       docker-machine-hyperkit
+      podman
       lens
       ngrok
     ];
