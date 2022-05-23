@@ -53,7 +53,6 @@ in
     };
 
     home.file.".config/polybar".source = ../dotfiles/polybar;
-    home.file.".config/ranger".source = ../dotfiles/ranger;
 
     home.packages = with pkgs; [
       betterlockscreen

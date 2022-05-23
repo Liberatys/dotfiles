@@ -10,7 +10,7 @@ with lib;
   config = mkIf config.dotfiles.devops.enabled {
     home.packages = with pkgs; [
       act
-      dagger
+      # dagger
       terraform
       doctl
       fluxcd
@@ -18,7 +18,7 @@ with lib;
       kubectl
       kube3d
       kubeseal
-      docker-machine-hyperkit
+      # docker-machine-hyperkit
       podman
       lens
       ngrok

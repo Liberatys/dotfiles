@@ -16,7 +16,7 @@ require('packer').startup(function(use)
 	use 'windwp/nvim-autopairs'
 	use 'folke/trouble.nvim'
 	use 'gpanders/editorconfig.nvim'
-	use 'chentau/marks.nvim'
+	use 'chentoast/marks.nvim'
 	use 'ggandor/lightspeed.nvim'
 	use 'nvim-telescope/telescope.nvim'
     use 'neovim/nvim-lspconfig'

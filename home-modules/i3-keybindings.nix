@@ -2,7 +2,7 @@ mod: {
   "${mod}+d" = "exec rofi -show run";
   "${mod}+q" = "kill";
 
-  "${mod}+Return" = "exec alacritty";
+  "${mod}+Return" = "exec emacsclient -c";
 
   "${mod}+h" = "split h";
   "${mod}+v" = "split v";
