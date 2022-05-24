@@ -3,9 +3,8 @@ mod: {
   "${mod}+q" = "kill";
 
   "${mod}+Return" = "exec emacsclient -c";
+  "${mod}+Tab" = "exec rofi -show";
 
-  "${mod}+h" = "split h";
-  "${mod}+v" = "split v";
   "${mod}+f" = "fullscreen";
   "${mod}+s" = "layout stacking";
   "${mod}+t" = "layout tabbed";
@@ -20,6 +19,11 @@ mod: {
   "${mod}+Shift+J" = "focus down";
   "${mod}+Shift+K" = "focus up";
   "${mod}+Shift+L" = "focus right";
+
+  "${mod}+H" = "move left";
+  "${mod}+J" = "move down";
+  "${mod}+K" = "move up";
+  "${mod}+L" = "move right";
 
   "${mod}+Left" = "move left";
   "${mod}+Down" = "move down";
