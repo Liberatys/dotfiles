@@ -122,6 +122,7 @@ with pkgs.lib;
           ./home-modules/vscode.nix
           ./home-modules/remote.nix
           ./home-modules/devops.nix
+          ./home-modules/company.nix
         ];
 
         dotfiles = {

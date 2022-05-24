@@ -40,6 +40,7 @@
       wm.enabled = true;
       devops.enabled = true;
       workstation.enabled = true;
+      company.enabled = true;
     };
   };
 }

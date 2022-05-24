@@ -33,13 +33,10 @@ with lib;
       ack
 
       # Services
-      slack
-      slack-term
-      zoom-us
       _1password
       bitwarden
       bitwarden-cli
-      firefox
+      librewolf
 
       # FONTS
       (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
