@@ -61,6 +61,7 @@ with lib;
 
       # Communication
       konversation
+      discord
 
       # Languages
 
