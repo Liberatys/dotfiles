@@ -60,6 +60,7 @@ in
       polybar
       dunst
       feh
+      gnome.nautilus
       unclutter
       xautolock
       xfontsel

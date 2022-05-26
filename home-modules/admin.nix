@@ -12,6 +12,8 @@ with lib;
       arandr
       lshw
       guvcview
+      yubikey-manager
+      pinentry
     ];
   };
 }
