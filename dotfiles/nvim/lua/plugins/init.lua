@@ -17,6 +17,7 @@ require('packer').startup(function(use)
 	use 'folke/trouble.nvim'
 	use 'gpanders/editorconfig.nvim'
 	use 'chentoast/marks.nvim'
+    use 'nvim-orgmode/orgmode'
 	use 'ggandor/lightspeed.nvim'
 	use 'nvim-telescope/telescope.nvim'
     use 'neovim/nvim-lspconfig'

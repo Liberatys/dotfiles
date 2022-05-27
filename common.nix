@@ -40,6 +40,11 @@ with pkgs.lib;
     environment.pathsToLink = [ "/share/fish" ];
 
     services = {
+
+      lorri = {
+        enable = true;
+      };
+
       earlyoom = {
         enable = true;
         freeMemThreshold = 5;
@@ -92,56 +97,56 @@ with pkgs.lib;
       isNormalUser = true;
       uid = 1000;
       extraGroups = [ "wheel" "networkmanager" "docker" ]
-      ++ pkgs.lib.optional config.virtualisation.docker.enable "docker";
+        ++ pkgs.lib.optional config.virtualisation.docker.enable "docker";
       shell = "${pkgs.fish}/bin/fish";
       passwordFile = "/etc/passwordFile-${config.dotfiles.params.username}"; # will be set during nixos-up
+    };
+
+    services = {
+      postgresql = {
+        enable = true;
+        package = pkgs.postgresql_11;
       };
-
-      services = {
-        postgresql = {
-          enable = true;
-          package = pkgs.postgresql_11;
-        };
-        redis = {
-          enable = true;
-        };
+      redis = {
+        enable = true;
       };
+    };
 
-      users.users.root.hashedPassword = "!";
+    users.users.root.hashedPassword = "!";
 
-      home-manager = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
+    home-manager = {
+      useGlobalPkgs = true;
+      useUserPackages = true;
 
-        users."${config.dotfiles.params.username}" = {
-          imports = [
-            ./nix/dotfiles-params.nix
-            ./home-modules/fish.nix
-            ./home-modules/qutebrowser.nix
-            ./home-modules/wm.nix
-            ./home-modules/workstation.nix
-            ./home-modules/git.nix
-            ./home-modules/dev.nix
-            ./home-modules/security.nix
-            ./home-modules/admin.nix
-            ./home-modules/mail.nix
-            ./home-modules/neovim.nix
-            ./home-modules/tmux.nix
-            ./home-modules/emacs.nix
-            ./home-modules/vscode.nix
-            ./home-modules/remote.nix
-            ./home-modules/devops.nix
-            ./home-modules/company.nix
-          ];
+      users."${config.dotfiles.params.username}" = {
+        imports = [
+          ./nix/dotfiles-params.nix
+          ./home-modules/fish.nix
+          ./home-modules/qutebrowser.nix
+          ./home-modules/wm.nix
+          ./home-modules/workstation.nix
+          ./home-modules/git.nix
+          ./home-modules/dev.nix
+          ./home-modules/security.nix
+          ./home-modules/admin.nix
+          ./home-modules/mail.nix
+          ./home-modules/neovim.nix
+          ./home-modules/tmux.nix
+          ./home-modules/emacs.nix
+          ./home-modules/vscode.nix
+          ./home-modules/remote.nix
+          ./home-modules/devops.nix
+          ./home-modules/company.nix
+        ];
 
-          dotfiles = {
-            params = config.dotfiles.params;
-          };
+        dotfiles = {
+          params = config.dotfiles.params;
+        };
 
-          news = {
-            display = "silent";
-          };
+        news = {
+          display = "silent";
         };
       };
     };
-  }
+  };
+}
