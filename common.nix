@@ -39,10 +39,99 @@ with pkgs.lib;
 
     environment.pathsToLink = [ "/share/fish" ];
 
+    hardware = {
+      enableAllFirmware = true;
+      enableRedistributableFirmware = true;
+      pulseaudio = {
+        enable = true;
+      };
+
+      firmware = [ pkgs.wireless-regdb ];
+    };
+
+    swapDevices = [{ device = "/swapfile"; size = 6144; }];
+
+    nixpkgs = {
+      config = {
+        allowUnfree = true;
+        allowBroken = true;
+      };
+    };
+
+    nix = {
+      trustedUsers = [ "root" "liberatys" ];
+      allowedUsers = ["@wheel"];
+
+      extraOptions = ''
+        experimental-features = nix-command
+      '';
+
+      package = pkgs.nixUnstable;
+
+      gc = {
+        automatic = true;
+        dates = "weekly";
+      };
+
+      autoOptimiseStore = true;
+      buildCores = 4;
+      maxJobs = 4;
+    };
+
+    security = {
+      auditd = {
+        enable = true;
+      };
+
+      sudo = {
+        execWheelOnly = true;
+      };
+
+      audit = {
+        enable = true;
+
+        rules = [
+          "-a exit,always -F arch=b64 -S execve"
+        ];
+      };
+    };
+
+    users.extraUsers."${config.dotfiles.params.username}" = {
+      home = "/home/${config.dotfiles.params.username}";
+      isNormalUser = true;
+      uid = 1000;
+      extraGroups = [ "wheel" "networkmanager" "docker" ]
+        ++ pkgs.lib.optional config.virtualisation.docker.enable "docker";
+      shell = "${pkgs.fish}/bin/fish";
+      passwordFile = "/etc/passwordFile-${config.dotfiles.params.username}"; # will be set during nixos-up
+    };
+
     services = {
+      postgresql = {
+        enable = true;
+        package = pkgs.postgresql_11;
+      };
+
+      redis = {
+        enable = true;
+      };
+
+      locate = {
+        enable = true;
+      };
 
       lorri = {
         enable = true;
+      };
+
+      clamav = {
+        daemon = {
+          enable = true;
+        };
+
+        updater = {
+          enable = true;
+        };
       };
 
       earlyoom = {
@@ -64,55 +153,15 @@ with pkgs.lib;
       };
     };
 
-    hardware = {
-      enableAllFirmware = true;
-      enableRedistributableFirmware = true;
-      pulseaudio = {
-        enable = true;
-      };
-
-      firmware = [ pkgs.wireless-regdb ];
-    };
-
-    swapDevices = [{ device = "/swapfile"; size = 2048; }];
-
-    nixpkgs = {
-      config = {
-        allowUnfree = true;
-        allowBroken = true;
-      };
-    };
-
-    nix = {
-      trustedUsers = [ "root" "liberatys" ];
-
-      gc = {
-        automatic = true;
-        dates = "weekly";
-      };
-    };
-
-    users.extraUsers."${config.dotfiles.params.username}" = {
-      home = "/home/${config.dotfiles.params.username}";
-      isNormalUser = true;
-      uid = 1000;
-      extraGroups = [ "wheel" "networkmanager" "docker" ]
-        ++ pkgs.lib.optional config.virtualisation.docker.enable "docker";
-      shell = "${pkgs.fish}/bin/fish";
-      passwordFile = "/etc/passwordFile-${config.dotfiles.params.username}"; # will be set during nixos-up
-    };
-
-    services = {
-      postgresql = {
-        enable = true;
-        package = pkgs.postgresql_11;
-      };
-      redis = {
-        enable = true;
-      };
-    };
-
     users.users.root.hashedPassword = "!";
+
+    networking = {
+      hostName = "liberatys";
+
+      firewall = {
+        enable = true;
+      };
+    };
 
     home-manager = {
       useGlobalPkgs = true;

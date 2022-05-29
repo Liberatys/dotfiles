@@ -34,3 +34,6 @@ link:
 
 deps:
 	bash ./pkgs/asdf-plugins
+
+logs:
+	journalctl -f
