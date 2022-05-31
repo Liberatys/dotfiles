@@ -50,8 +50,6 @@ with lib;
 
       # Workflow
       meld
-      lazydocker
-      lazygit
       gnumake
 
       # Documentation

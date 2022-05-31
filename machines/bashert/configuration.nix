@@ -41,6 +41,7 @@
       devops.enabled = true;
       workstation.enabled = true;
       company.enabled = true;
+      lazy.enabled = true;
     };
   };
 }

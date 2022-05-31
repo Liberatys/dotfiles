@@ -186,6 +186,7 @@ with pkgs.lib;
           ./home-modules/remote.nix
           ./home-modules/devops.nix
           ./home-modules/company.nix
+          ./home-modules/lazy.nix
         ];
 
         dotfiles = {
