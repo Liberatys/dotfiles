@@ -15,6 +15,8 @@ with lib;
       doctl
       fluxcd
       minikube
+      kubeval
+      kubernetes-helm
       kubectl
       kube3d
       kubeseal
