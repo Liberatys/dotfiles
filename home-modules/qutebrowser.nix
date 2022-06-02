@@ -10,7 +10,7 @@ with lib;
 
     home.file.".config/qutebrowser/config.py".text = ''
       c.aliases = {}
-      c.tabs.tabs_are_windows = True
+      c.tabs.tabs_are_windows = False
       c.tabs.show = "multiple"
       c.statusbar.show = "in-mode"
       c.downloads.location.directory = "~/Downloads"

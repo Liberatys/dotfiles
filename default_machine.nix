@@ -34,6 +34,7 @@
 
   environment.variables = {
     EDITOR = "nvim";
+    BROWSER = "qutebrowser";
     VISUAL = "emacs";
   };
 
