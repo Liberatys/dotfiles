@@ -86,6 +86,7 @@ with lib;
       ## Python
       python37
       python37Packages.virtualenv
+      python37Packages.pip
 
       ## Nix
       nix-prefetch
