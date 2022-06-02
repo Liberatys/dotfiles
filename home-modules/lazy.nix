@@ -6,7 +6,7 @@ with lib;
     dotfiles.lazy.enabled = mkEnableOption "lazy";
   };
 
-  # All applications needed for devops operatoins / observation and work
+  # All applications needed for devops operations / observation and work
   config = mkIf config.dotfiles.lazy.enabled {
     home.packages = with pkgs; [
       lazydocker
