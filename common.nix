@@ -176,8 +176,6 @@ with pkgs.lib;
           ./modules/workstation.nix
           ./modules/git.nix
           ./modules/dev.nix
-          ./modules/security.nix
-          ./modules/admin.nix
           ./modules/mail.nix
           ./modules/tmux.nix
           ./modules/vscode.nix
@@ -186,6 +184,9 @@ with pkgs.lib;
           ./modules/company.nix
           ./modules/lazy.nix
 
+          # System
+          ./modules/system/security.nix
+          ./modules/system/admin.nix
 
           # Editors
           ./modules/editors/emacs.nix

@@ -4,9 +4,16 @@ with lib;
 
 {
   options = {
-    dotfiles.admin.enabled = mkEnableOption "admin";
+    modules = {
+      system = {
+        admin = {
+          enabled = mkEnableOption "admin";
+        };
+      };
+    };
   };
-  config = mkIf config.dotfiles.admin.enabled {
+
+  config = mkIf config.modules.system.admin.enabled {
     home.packages = with pkgs; [
       pavucontrol
       arandr

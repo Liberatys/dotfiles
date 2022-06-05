@@ -25,14 +25,12 @@
 
   home-manager.users."${config.dotfiles.params.username}" = {
     dotfiles = {
-      admin.enabled = true;
       dev.enabled = true;
       fish.enabled = true;
       git.enabled = true;
       mail.enabled = true;
       qutebrowser.enabled = true;
       remote.enabled = true;
-      security.enabled = true;
       tmux.enabled = true;
       vscode.enabled = false;
       wm.enabled = true;
@@ -43,6 +41,16 @@
     };
 
     modules = {
+      system = {
+        admin = {
+          enabled = true;
+        };
+
+        security = {
+          enabled = true;
+        };
+      };
+
       editors = {
         emacs = {
           enabled = true;
