@@ -52,7 +52,7 @@ in
       };
     };
 
-    home.file.".config/polybar".source = ../dotfiles/polybar;
+    home.file.".config/polybar".source = ../configs/polybar;
 
     home.packages = with pkgs; [
       betterlockscreen

@@ -27,11 +27,9 @@
     dotfiles = {
       admin.enabled = true;
       dev.enabled = true;
-      emacs.enabled = true;
       fish.enabled = true;
       git.enabled = true;
       mail.enabled = true;
-      nvim.enabled = true;
       qutebrowser.enabled = true;
       remote.enabled = true;
       security.enabled = true;
@@ -42,6 +40,18 @@
       workstation.enabled = true;
       company.enabled = true;
       lazy.enabled = true;
+    };
+
+    modules = {
+      editors = {
+        emacs = {
+          enabled = true;
+        };
+
+        nvim = {
+          enabled = true;
+        };
+      };
     };
   };
 }

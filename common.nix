@@ -170,23 +170,26 @@ with pkgs.lib;
       users."${config.dotfiles.params.username}" = {
         imports = [
           ./nix/dotfiles-params.nix
-          ./home-modules/fish.nix
-          ./home-modules/qutebrowser.nix
-          ./home-modules/wm.nix
-          ./home-modules/workstation.nix
-          ./home-modules/git.nix
-          ./home-modules/dev.nix
-          ./home-modules/security.nix
-          ./home-modules/admin.nix
-          ./home-modules/mail.nix
-          ./home-modules/neovim.nix
-          ./home-modules/tmux.nix
-          ./home-modules/emacs.nix
-          ./home-modules/vscode.nix
-          ./home-modules/remote.nix
-          ./home-modules/devops.nix
-          ./home-modules/company.nix
-          ./home-modules/lazy.nix
+          ./modules/fish.nix
+          ./modules/qutebrowser.nix
+          ./modules/wm.nix
+          ./modules/workstation.nix
+          ./modules/git.nix
+          ./modules/dev.nix
+          ./modules/security.nix
+          ./modules/admin.nix
+          ./modules/mail.nix
+          ./modules/tmux.nix
+          ./modules/vscode.nix
+          ./modules/remote.nix
+          ./modules/devops.nix
+          ./modules/company.nix
+          ./modules/lazy.nix
+
+
+          # Editors
+          ./modules/editors/emacs.nix
+          ./modules/editors/neovim.nix
         ];
 
         dotfiles = {

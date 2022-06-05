@@ -66,11 +66,11 @@
        ;;tmux              ; an API for interacting with tmux
 
        :os
-       (:if IS-MAC macos)  ; improve compatibility with macOS
+       (:if IS-MAC macos)
 
        :lang
-       cc                ; C > C++ == 1
-       crystal           ; ruby at the speed of c
+       (cc +lsp)
+       crystal
        ledger
        ;;data              ; config/data formats
        (dart +flutter)   ; paint ui and not much else

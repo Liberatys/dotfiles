@@ -8,15 +8,21 @@ let
       url = https://github.com/nix-community/nix-doom-emacs/archive/master.tar.gz;
     })
     {
-      doomPrivateDir = ../dotfiles/doom;
+      doomPrivateDir = ../../configs/doom;
     };
 in
 {
   options = {
-    dotfiles.emacs.enabled = mkEnableOption "emacs";
+    modules = {
+      editors = {
+        emacs = {
+          enabled = mkEnableOption "emacs";
+        };
+      };
+    };
   };
 
-  config = mkIf config.dotfiles.emacs.enabled {
+  config = mkIf config.modules.editors.emacs.enabled {
     home.packages = [ doom-emacs ];
 
     services = {
