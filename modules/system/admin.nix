@@ -16,6 +16,7 @@ with lib;
   config = mkIf config.modules.system.admin.enabled {
     home.packages = with pkgs; [
       pavucontrol
+      wireshark
       arandr
       lshw
       guvcview

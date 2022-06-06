@@ -100,7 +100,7 @@ with pkgs.lib;
       home = "/home/${config.dotfiles.params.username}";
       isNormalUser = true;
       uid = 1000;
-      extraGroups = [ "wheel" "networkmanager" "docker" ]
+      extraGroups = [ "wheel" "networkmanager" "docker" "wireshark" ]
         ++ pkgs.lib.optional config.virtualisation.docker.enable "docker";
       shell = "${pkgs.fish}/bin/fish";
       passwordFile = "/etc/passwordFile-${config.dotfiles.params.username}"; # will be set during nixos-up

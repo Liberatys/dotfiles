@@ -116,6 +116,19 @@
         greeter = {
           enable = true;
         };
+
+        greeters = {
+          mini = {
+            enable = true;
+            user = "liberatys";
+            extraConfig = ''
+                [greeter]
+                show-password-label = true
+                [greeter-theme]
+                background-image = ""
+            '';
+          };
+        };
       };
     };
   };

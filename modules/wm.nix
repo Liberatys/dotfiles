@@ -43,6 +43,11 @@ in
               notification = false;
             }
             {
+              command = "nitrogen --restore";
+              always = true;
+              notification = false;
+            }
+            {
               command = "setxkbmap -option \"caps:escape\"";
               always = true;
               notification = false;
@@ -69,6 +74,7 @@ in
       xorg.xkill
       keynav
       parcellite
+      nitrogen
       pasystray
       libnotify
       lxappearance

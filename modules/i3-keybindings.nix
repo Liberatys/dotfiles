@@ -9,7 +9,7 @@ mod: {
   "${mod}+s" = "layout stacking";
   "${mod}+t" = "layout tabbed";
   "${mod}+e" = "layout default";
-  "${mod}+g" = "exec rofi -show window";
+  "${mod}+g" = "exec $HOME/.config/polybar/launch.sh --docky";
 
   "${mod}+1" = "workspace 1";
   "${mod}+2" = "workspace 2";

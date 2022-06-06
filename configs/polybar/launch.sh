@@ -3,34 +3,13 @@
 dir="$HOME/.config/polybar"
 themes=(`ls --hide="launch.sh" $dir`)
 
-launch_bar() {
-	pkill polybar
-
-	# Wait until the processes have been shut down
-	while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-
-	# Launch the bar
-	if [[ "$style" == "hack" || "$style" == "cuts" ]]; then
-		polybar -q top -c "$dir/$style/config.ini" &
-		polybar -q bottom -c "$dir/$style/config.ini" &
-	elif [[ "$style" == "pwidgets" ]]; then
-		bash "$dir"/pwidgets/launch.sh --main
-	else
-		polybar -q main -c "$dir/$style/config.ini" &	
-	fi
-}
-
 if [[ "$1" == "--docky" ]]; then
-	style="docky"
-	launch_bar
+    style="docky"
 
-else
-	cat <<- EOF
-	Usage : launch.sh --theme
-		
-	Available Themes :
-	--blocks    --colorblocks    --cuts      --docky
-	--forest    --grayblocks     --hack      --material
-	--panels    --pwidgets       --shades    --shapes
-	EOF
+    pkill polybar
+    while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+
+    for m in $(polybar --list-monitors | cut -d":" -f1); do
+        MONITOR=$m polybar --reload main -c "$dir/$style/config.ini"&
+    done
 fi
