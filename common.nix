@@ -14,9 +14,9 @@ with pkgs.lib;
   config = {
     dotfiles.params = {
       username = "liberatys";
-      fullname = "Nick Anthony Flueckiger";
-      signature = "Nick <Liberatys> Flueckiger";
-      email = "nick" + ".anthony" + ".flueckiger" + "@" + "hey.com";
+      fullname = "Liberatys";
+      signature = "Liberatys";
+      email = "liberatys" + "@" + "hey.com";
     };
 
     time.timeZone = "Europe/Zurich";

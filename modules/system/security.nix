@@ -20,6 +20,7 @@ with lib;
     ];
 
     home.file.".gnupg/gpg.conf".source = ../../configs/gpg/gpg.conf;
+    home.file.".gnupg/gpg-agent.conf".source = ../../configs/gpg/gpg-agent.conf;
   };
 
 }

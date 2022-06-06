@@ -74,6 +74,10 @@ with lib;
 
         set -x dr '--dry-run=client -o yaml'
         set -x fd '--force --grace-period=0'
+
+        set -x GPG_TTY (tty)
+        set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+        gpgconf --launch gpg-agent
       '';
       interactiveShellInit = ''
         fish_add_path $HOME/.cargo/bin
