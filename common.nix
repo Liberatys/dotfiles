@@ -60,7 +60,7 @@ with pkgs.lib;
 
     nix = {
       trustedUsers = [ "root" "liberatys" ];
-      allowedUsers = ["@wheel"];
+      allowedUsers = [ "@wheel" ];
 
       extraOptions = ''
         experimental-features = nix-command
@@ -170,15 +170,12 @@ with pkgs.lib;
       users."${config.dotfiles.params.username}" = {
         imports = [
           ./nix/dotfiles-params.nix
-          ./modules/fish.nix
           ./modules/qutebrowser.nix
-          ./modules/wm.nix
           ./modules/workstation.nix
           ./modules/git.nix
           ./modules/dev.nix
           ./modules/mail.nix
           ./modules/tmux.nix
-          ./modules/vscode.nix
           ./modules/remote.nix
           ./modules/devops.nix
           ./modules/company.nix
@@ -188,9 +185,14 @@ with pkgs.lib;
           ./modules/system/security.nix
           ./modules/system/admin.nix
 
+          # Dev
+          ./modules/dev/fish.nix
+          ./modules/dev/wm.nix
+
           # Editors
           ./modules/editors/emacs.nix
           ./modules/editors/neovim.nix
+          ./modules/editors/vscode.nix
         ];
 
         dotfiles = {

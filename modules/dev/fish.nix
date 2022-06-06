@@ -3,10 +3,16 @@
 with lib;
 {
   options = {
-    dotfiles.fish.enabled = mkEnableOption "fish";
+    modules = {
+      dev = {
+        fish = {
+          enabled = mkEnableOption "fish";
+        };
+      };
+    };
   };
 
-  config = mkIf config.dotfiles.fish.enabled {
+  config = mkIf config.modules.dev.fish.enabled {
     home.packages = [
       pkgs.zoxide
       pkgs.any-nix-shell

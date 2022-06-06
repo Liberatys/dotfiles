@@ -122,10 +122,10 @@
             enable = true;
             user = "liberatys";
             extraConfig = ''
-                [greeter]
-                show-password-label = true
-                [greeter-theme]
-                background-image = ""
+              [greeter]
+              show-password-label = true
+              [greeter-theme]
+              background-image = ""
             '';
           };
         };

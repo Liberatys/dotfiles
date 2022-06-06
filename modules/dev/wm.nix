@@ -1,9 +1,6 @@
 { config, lib, pkgs, ... }:
 
 with lib;
-let
-  wallpaper = ../assets/wallpaper.jpg;
-in
 {
 
   imports = [
@@ -11,10 +8,16 @@ in
   ];
 
   options = {
-    dotfiles.wm.enabled = mkEnableOption "wm";
+    modules = {
+      dev = {
+        wm = {
+          enabled = mkEnableOption "wm";
+        };
+      };
+    };
   };
 
-  config = mkIf config.dotfiles.wm.enabled {
+  config = mkIf config.modules.dev.wm.enabled {
 
     xsession = {
       enable = true;
@@ -57,7 +60,7 @@ in
       };
     };
 
-    home.file.".config/polybar".source = ../configs/polybar;
+    home.file.".config/polybar".source = ../../configs/polybar;
 
     home.packages = with pkgs; [
       betterlockscreen

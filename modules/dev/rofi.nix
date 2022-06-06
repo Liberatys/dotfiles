@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 {
-  home.file.".config/rofi/rofi.rasi".source = ../themes/rofi/rofi.rasi;
+  home.file.".config/rofi/rofi.rasi".source = ../../themes/rofi/rofi.rasi;
 
   programs.rofi = {
     enable = true;

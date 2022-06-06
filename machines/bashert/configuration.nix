@@ -26,14 +26,11 @@
   home-manager.users."${config.dotfiles.params.username}" = {
     dotfiles = {
       dev.enabled = true;
-      fish.enabled = true;
       git.enabled = true;
       mail.enabled = true;
       qutebrowser.enabled = true;
       remote.enabled = true;
       tmux.enabled = true;
-      vscode.enabled = false;
-      wm.enabled = true;
       devops.enabled = true;
       workstation.enabled = true;
       company.enabled = true;
@@ -51,9 +48,23 @@
         };
       };
 
+      dev = {
+        fish = {
+          enabled = true;
+        };
+
+        wm = {
+          enabled = true;
+        };
+      };
+
       editors = {
         emacs = {
           enabled = true;
+        };
+
+        vscode = {
+          enabled = false;
         };
 
         nvim = {

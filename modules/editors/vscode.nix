@@ -3,10 +3,16 @@
 with lib;
 {
   options = {
-    dotfiles.vscode.enabled = mkEnableOption "vscode";
+    modules = {
+      editors = {
+        vscode = {
+          enabled = mkEnableOption "vscode";
+        };
+      };
+    };
   };
 
-  config = mkIf config.dotfiles.vscode.enabled {
+  config = mkIf config.modules.editors.vscode.enabled {
 
     programs.vscode = {
       enable = true;
