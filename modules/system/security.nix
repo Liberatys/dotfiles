@@ -15,6 +15,11 @@ with lib;
   config = mkIf config.modules.system.security.enabled {
     home.packages = with pkgs; [
       veracrypt
+      gnome.seahorse
+      cryptsetup
     ];
+
+    home.file.".gnupg/gpg.conf".source = ../../configs/gpg/gpg.conf;
   };
+
 }

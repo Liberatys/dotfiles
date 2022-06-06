@@ -29,6 +29,9 @@ with lib;
           side-by-side = true;
         };
       };
+      signing = {
+        key = "0xFB1F2C864F01DA19";
+      };
       ignores = [
         ".envrc"
         ".direnv"
@@ -46,6 +49,7 @@ with lib;
         };
         "commit" = {
           verbose = "true";
+          gpgsign = true;
         };
         "filter \"lfs\"" = {
           process = "git-lfs filter-process";

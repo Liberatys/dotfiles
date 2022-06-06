@@ -76,6 +76,9 @@
   };
 
   services.xserver = {
+    enable = true;
+    autorun = true;
+    xkbOptions = "caps:escape";
     videoDrivers = [ "displaylink" "modesetting" "nvidia" ];
 
     autoRepeatDelay = 200;
@@ -84,10 +87,6 @@
     libinput = {
       enable = true;
     };
-
-    enable = true;
-    autorun = true;
-    xkbOptions = "caps:escape";
 
     desktopManager = {
       xterm = {
