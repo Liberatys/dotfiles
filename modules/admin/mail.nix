@@ -3,10 +3,16 @@
 with lib;
 {
   options = {
-    dotfiles.mail.enabled = mkEnableOption "mail";
+    modules = {
+      admin = {
+        mail = {
+          enabled = mkEnableOption "mail";
+        };
+      };
+    };
   };
 
-  config = mkIf config.dotfiles.mail.enabled {
+  config = mkIf config.modules.admin.mail.enabled {
     programs = {
 
       neomutt = {

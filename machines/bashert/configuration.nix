@@ -27,10 +27,8 @@
     dotfiles = {
       dev.enabled = true;
       git.enabled = true;
-      mail.enabled = true;
       qutebrowser.enabled = true;
       remote.enabled = true;
-      tmux.enabled = true;
       devops.enabled = true;
       workstation.enabled = true;
       company.enabled = true;
@@ -48,12 +46,22 @@
         };
       };
 
+      admin = {
+        mail = {
+          enabled = true;
+        };
+      };
+
       dev = {
         fish = {
           enabled = true;
         };
 
         wm = {
+          enabled = true;
+        };
+
+        tmux = {
           enabled = true;
         };
       };

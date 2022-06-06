@@ -174,8 +174,6 @@ with pkgs.lib;
           ./modules/workstation.nix
           ./modules/git.nix
           ./modules/dev.nix
-          ./modules/mail.nix
-          ./modules/tmux.nix
           ./modules/remote.nix
           ./modules/devops.nix
           ./modules/company.nix
@@ -185,9 +183,13 @@ with pkgs.lib;
           ./modules/system/security.nix
           ./modules/system/admin.nix
 
+          # Admin
+          ./modules/admin/mail.nix
+
           # Dev
           ./modules/dev/fish.nix
           ./modules/dev/wm.nix
+          ./modules/dev/tmux.nix
 
           # Editors
           ./modules/editors/emacs.nix

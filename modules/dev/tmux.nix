@@ -3,10 +3,16 @@
 with lib;
 {
   options = {
-    dotfiles.tmux.enabled = mkEnableOption "tmux";
+    modules = {
+      dev = {
+        tmux = {
+          enabled = mkEnableOption "tmux";
+        };
+      };
+    };
   };
 
-  config = mkIf config.dotfiles.tmux.enabled {
+  config = mkIf config.modules.dev.tmux.enabled {
     programs.tmux = {
       enable = true;
       shortcut = "a";
