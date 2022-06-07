@@ -26,8 +26,6 @@
   home-manager.users."${config.dotfiles.params.username}" = {
     dotfiles = {
       dev.enabled = true;
-      git.enabled = true;
-      qutebrowser.enabled = true;
       remote.enabled = true;
       devops.enabled = true;
       workstation.enabled = true;
@@ -57,11 +55,25 @@
           enabled = true;
         };
 
+        git = {
+          enabled = true;
+        };
+
+        database = {
+          enabled = true;
+        };
+
         wm = {
           enabled = true;
         };
 
         tmux = {
+          enabled = true;
+        };
+      };
+
+      browsers = {
+        qutebrowser = {
           enabled = true;
         };
       };

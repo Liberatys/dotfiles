@@ -170,9 +170,7 @@ with pkgs.lib;
       users."${config.dotfiles.params.username}" = {
         imports = [
           ./nix/dotfiles-params.nix
-          ./modules/qutebrowser.nix
           ./modules/workstation.nix
-          ./modules/git.nix
           ./modules/dev.nix
           ./modules/remote.nix
           ./modules/devops.nix
@@ -190,6 +188,11 @@ with pkgs.lib;
           ./modules/dev/fish.nix
           ./modules/dev/wm.nix
           ./modules/dev/tmux.nix
+          ./modules/dev/database.nix
+          ./modules/dev/git.nix
+
+          # Browsers
+          ./modules/browsers/qutebrowser.nix
 
           # Editors
           ./modules/editors/emacs.nix

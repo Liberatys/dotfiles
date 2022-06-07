@@ -23,6 +23,14 @@ with lib;
 
       extraConfig = ''
         set -g mouse on
+        set-window-option -g mode-keys vi
+
+        unbind n
+        unbind -T copy-mode-vi Space;
+        unbind -T copy-mode-vi Enter;
+
+        bind -T copy-mode-vi v send-keys -X begin-selection
+        bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xsel --clipboard"
 
         bind h select-pane -L
         bind j select-pane -D
@@ -31,6 +39,14 @@ with lib;
 
         bind v split-window -h
         bind s split-window -v
+
+        bind m copy-mode
+
+        bind S-Left previous-window
+        bind S-Right next-window
+
+        bind r source-file ~/.config/tmux/tmux.conf \; display "Reloaded ~/.tmux.conf"
+        bind n command-prompt "rename-window '%%'"
 
         bind q killp
       '';

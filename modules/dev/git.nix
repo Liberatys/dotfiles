@@ -3,10 +3,16 @@
 with lib;
 {
   options = {
-    dotfiles.git.enabled = mkEnableOption "git";
+    modules = {
+      dev = {
+        git = {
+          enabled = mkEnableOption "git";
+        };
+      };
+    };
   };
 
-  config = mkIf config.dotfiles.git.enabled {
+  config = mkIf config.modules.dev.git.enabled {
     home.packages = with pkgs; [
       git-lfs
       gitAndTools.hub

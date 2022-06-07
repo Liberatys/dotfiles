@@ -3,9 +3,16 @@
 with lib;
 {
   options = {
-    dotfiles.qutebrowser.enabled = mkEnableOption "qutebrowser";
+    modules = {
+      browsers = {
+        qutebrowser = {
+          enabled = mkEnableOption "qutebrowser";
+        };
+      };
+    };
   };
-  config = {
+
+  config = mkIf config.modules.browsers.qutebrowser.enabled {
     home.packages = [ pkgs.qutebrowser ];
 
     home.file.".config/qutebrowser/config.py".text = ''
