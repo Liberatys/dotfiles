@@ -24,6 +24,7 @@ with lib;
       shellAliases = {
         # General
         "l" = "exa -a --icons --colour always";
+        "docker-compose" = "docker compose";
 
         # Editing
         "e" = "nvim";
@@ -40,6 +41,8 @@ with lib;
         "nn" = "cd $HOME/notes";
         "ne" = "cd $HOME/notes/README.org";
         "np" = "push-notes";
+
+        "nm" = "neomutt";
 
         # Building
         "cb" = "cargo build";

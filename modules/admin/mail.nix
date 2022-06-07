@@ -14,7 +14,6 @@ with lib;
 
   config = mkIf config.modules.admin.mail.enabled {
     programs = {
-
       neomutt = {
         enable = true;
 
@@ -40,7 +39,9 @@ with lib;
     accounts.email = {
       accounts = {
         work = {
+          realName = "Nick Anthony Flueckiger";
           address = "nick.flueckiger@renuo.ch";
+
           imap = {
             host = "imap.gmail.com";
           };
@@ -49,10 +50,13 @@ with lib;
             enable = true;
             create = "maildir";
           };
+
           msmtp.enable = true;
+
           notmuch.enable = true;
+
           primary = true;
-          realName = "Nick Anthony Flueckiger";
+
           signature = {
             text = ''
               Nick Flueckiger
@@ -61,6 +65,7 @@ with lib;
             showSignature = "append";
           };
           passwordCommand = "pass Email/renuo.ch";
+
           smtp = {
             host = "smtp.gmail.com";
           };

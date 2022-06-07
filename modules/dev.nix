@@ -32,6 +32,12 @@ with lib;
       gist
       awscli2
 
+      # Learning
+      exercism
+
+      # Documentation
+      zeal
+
       # CLI / Terminal
       alacritty
       fzf

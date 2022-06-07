@@ -23,5 +23,11 @@ with lib;
       yubikey-manager
       pinentry
     ];
+
+    programs = {
+      password-store = {
+        enable = true;
+      };
+    };
   };
 }
