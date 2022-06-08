@@ -10,6 +10,7 @@ with lib;
     home.packages = with pkgs; [
       zoom-us
       slack
+      teams
       slack-term
     ];
   };

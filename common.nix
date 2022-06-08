@@ -20,6 +20,7 @@ with pkgs.lib;
     };
 
     time.timeZone = "Europe/Zurich";
+
     console.keyMap = "us";
 
     programs = {
@@ -110,6 +111,11 @@ with pkgs.lib;
       postgresql = {
         enable = true;
         package = pkgs.postgresql_11;
+      };
+
+
+      logind = {
+        lidSwitch = "suspend";
       };
 
       redis = {

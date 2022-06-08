@@ -34,6 +34,7 @@ with lib;
 
       # Services
       _1password
+      _1password-gui
       bitwarden
       bitwarden-cli
       librewolf
