@@ -1,0 +1,2 @@
+rm -rf $HOME/.aws/*
+rm -rf $HOME/dev/renuo

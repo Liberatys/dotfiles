@@ -26,6 +26,8 @@ with lib;
         "l" = "exa -a --icons --colour always";
         "docker-compose" = "docker compose";
 
+        "nbuild" = "nix-build -E 'with import <nixpkgs> {}; callPackage ./default.nix {}'";
+
         # Editing
         "e" = "nvim";
         "f" = "emacsclient -c";
@@ -56,6 +58,9 @@ with lib;
         "gl" = "git pull";
         "gp" = "git push";
         "gcs" = "git commit -s";
+
+        # Java
+        "gw" = "./gradlew";
 
         # Operations
         "ld" = "lazydocker";

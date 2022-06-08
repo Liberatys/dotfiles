@@ -31,6 +31,10 @@ with lib;
       # Services
       gist
       awscli2
+      heroku
+
+      # CI/CD
+      # sem => https://github.com/NixOS/nixpkgs/pull/176928
 
       # Learning
       exercism
@@ -99,6 +103,7 @@ with lib;
       patchelf
       nix-top
       nix-prefetch-git
+      nixpkgs-review
       node2nix
       nix-tree
       niv
