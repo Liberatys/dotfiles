@@ -42,6 +42,10 @@
         security = {
           enabled = true;
         };
+
+        manage = {
+          enabled = true;
+        };
       };
 
       admin = {

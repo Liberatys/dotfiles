@@ -1,0 +1,1 @@
+brightnessctl -d tpacpi::kbd_backlight set $1

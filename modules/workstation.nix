@@ -103,13 +103,9 @@ with lib;
 
     services.redshift = {
       enable = true;
-      brightness = {
-        day = "1";
-        night = "0.90";
-      };
       temperature = {
-        day = 6500;
-        night = 3500;
+        day = 4500;
+        night = 2500;
       };
 
       provider = "geoclue2";

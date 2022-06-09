@@ -186,6 +186,7 @@ with pkgs.lib;
           # System
           ./modules/system/security.nix
           ./modules/system/admin.nix
+          ./modules/system/manage.nix
 
           # Admin
           ./modules/admin/mail.nix

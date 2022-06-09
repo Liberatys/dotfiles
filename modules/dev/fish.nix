@@ -53,6 +53,9 @@ with lib;
         # Testing
         "ber" = "bundle exec rspec";
 
+        "ts" = "tmux ls";
+        "ta" = "tmux attach";
+
         # Git
         "lg" = "lazygit";
         "gl" = "git pull";
