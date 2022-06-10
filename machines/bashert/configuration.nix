@@ -15,8 +15,17 @@
         Ocean = {
           pskRaw = "85ea6bbccb6b4cc2f7e18306b3f499d747ff80d446fa1dc7ef670a1e0174096e";
         };
+
+        "Renuo Wifi" = {
+          pskRaw = "fa9191956f902ec4d9ed7c6531c522a66f32db6b53efa262274ccb3f245d3cc8";
+        };
+
+        "Liberat Phone" = {
+          pskRaw = "fa9191956f902ec4d9ed7c6531c522a66f32db6b53efa262274ccb3f245d3cc8";
+        };
       };
       enable = true;
+
       userControlled = {
         enable = true;
       };
@@ -26,11 +35,8 @@
   home-manager.users."${config.dotfiles.params.username}" = {
     dotfiles = {
       dev.enabled = true;
-      remote.enabled = true;
-      devops.enabled = true;
       workstation.enabled = true;
       company.enabled = true;
-      lazy.enabled = true;
     };
 
     modules = {
@@ -56,6 +62,26 @@
 
       dev = {
         fish = {
+          enabled = true;
+        };
+
+        devops = {
+          enabled = true;
+        };
+
+        terminal = {
+          enabled = true;
+        };
+
+        web = {
+          enabled = true;
+        };
+
+        lazy = {
+          enabled = true;
+        };
+
+        remote = {
           enabled = true;
         };
 

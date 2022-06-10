@@ -11,7 +11,6 @@ with lib;
       zoom-us
       slack
       teams
-      slack-term
     ];
   };
 }

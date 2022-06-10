@@ -3,11 +3,17 @@
 with lib;
 {
   options = {
-    dotfiles.devops.enabled = mkEnableOption "devops";
+    modules = {
+      dev = {
+        devops = {
+          enabled = mkEnableOption "devops";
+        };
+      };
+    };
   };
 
   # All applications needed for devops operatoins / observation and work
-  config = mkIf config.dotfiles.devops.enabled {
+  config = mkIf config.modules.dev.devops.enabled {
     home.packages = with pkgs; [
       act
       # dagger

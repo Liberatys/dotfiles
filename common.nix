@@ -178,10 +178,7 @@ with pkgs.lib;
           ./nix/dotfiles-params.nix
           ./modules/workstation.nix
           ./modules/dev.nix
-          ./modules/remote.nix
-          ./modules/devops.nix
           ./modules/company.nix
-          ./modules/lazy.nix
 
           # System
           ./modules/system/security.nix
@@ -197,6 +194,11 @@ with pkgs.lib;
           ./modules/dev/tmux.nix
           ./modules/dev/database.nix
           ./modules/dev/git.nix
+          ./modules/dev/web.nix
+          ./modules/dev/remote.nix
+          ./modules/dev/lazy.nix
+          ./modules/dev/devops.nix
+          ./modules/dev/terminal.nix
 
           # Browsers
           ./modules/browsers/qutebrowser.nix

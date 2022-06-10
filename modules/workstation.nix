@@ -72,7 +72,6 @@ with lib;
       nmap
       openssl
       openconnect
-      openfortivpn
       pandoc
       paperkey
       pdftk

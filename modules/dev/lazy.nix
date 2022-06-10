@@ -3,11 +3,17 @@
 with lib;
 {
   options = {
-    dotfiles.lazy.enabled = mkEnableOption "lazy";
+    modules = {
+      dev = {
+        lazy = {
+          enabled = mkEnableOption "lazy";
+        };
+      };
+    };
   };
 
   # All applications needed for devops operations / observation and work
-  config = mkIf config.dotfiles.lazy.enabled {
+  config = mkIf config.modules.dev.lazy.enabled {
     home.packages = with pkgs; [
       lazydocker
     ];

@@ -30,42 +30,22 @@ with lib;
     home.packages = with pkgs; [
       # Services
       gist
-      awscli2
-      heroku
-
       # CI/CD
       # sem => https://github.com/NixOS/nixpkgs/pull/176928
 
       # Learning
       exercism
 
-      # Documentation
-      zeal
-
       # CLI / Terminal
-      alacritty
-      fzf
       so
-      nnn
-      exa
       cookiecutter
       bottom
-      rclone
-      ripgrep
-      rsync
-      mcfly
       nodePackages.zx
       pgcli
       wuzz
 
       # Workflow
       meld
-      gnumake
-
-      # Documentation
-      tealdeer
-      texlive.combined.scheme-full
-      texstudio
 
       # Communication
       konversation
