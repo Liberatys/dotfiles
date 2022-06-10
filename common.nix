@@ -184,6 +184,7 @@ with pkgs.lib;
           ./modules/system/security.nix
           ./modules/system/admin.nix
           ./modules/system/manage.nix
+          ./modules/system/home.nix
 
           # Admin
           ./modules/admin/mail.nix
@@ -200,8 +201,18 @@ with pkgs.lib;
           ./modules/dev/devops.nix
           ./modules/dev/terminal.nix
 
+          # Dev - Languages
+          ./modules/dev/languages/c.nix
+          ./modules/dev/languages/go.nix
+          ./modules/dev/languages/rust.nix
+          ./modules/dev/languages/nodejs.nix
+          ./modules/dev/languages/python.nix
+          ./modules/dev/languages/ruby.nix
+          ./modules/dev/languages/nix.nix
+
           # Browsers
           ./modules/browsers/qutebrowser.nix
+          ./modules/browsers/librewolf.nix
 
           # Editors
           ./modules/editors/emacs.nix

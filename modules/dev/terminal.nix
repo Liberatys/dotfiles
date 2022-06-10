@@ -13,6 +13,20 @@ with lib;
   };
 
   config = mkIf config.modules.dev.terminal.enabled {
+    programs = {
+      taskwarrior = {
+        enable = true;
+
+        dataLocation = "~/notes/task";
+      };
+    };
+
+    services = {
+      lorri = {
+        enable = true;
+      };
+    };
+
     home.packages = with pkgs; [
       # Applications
       alacritty
@@ -31,6 +45,12 @@ with lib;
       rsync
       mcfly
       fzf
+      so
+      cookiecutter
+      bottom
+      nodePackages.zx
+      pgcli
+      wuzz
 
       # Dev-Tools
       gnumake

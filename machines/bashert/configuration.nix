@@ -52,6 +52,10 @@
         manage = {
           enabled = true;
         };
+
+        home = {
+          enabled = true;
+        };
       };
 
       admin = {
@@ -100,10 +104,41 @@
         tmux = {
           enabled = true;
         };
+
+        languages = {
+          ruby = {
+            enabled = true;
+          };
+
+          c = {
+            enabled = true;
+          };
+
+          rust = {
+            enabled = true;
+          };
+
+          nodejs = {
+            enabled = true;
+          };
+
+          nix = {
+            enabled = true;
+          };
+
+          python = {
+            enabled = true;
+          };
+        };
+
       };
 
       browsers = {
         qutebrowser = {
+          enabled = true;
+        };
+
+        librewolf = {
           enabled = true;
         };
       };
