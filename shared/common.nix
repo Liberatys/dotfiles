@@ -6,7 +6,7 @@ with pkgs.lib;
   imports = [
     (import "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/master.tar.gz}/nixos")
     (import "${builtins.fetchTarball https://github.com/NixOs/nixos-hardware/archive/master.tar.gz}/lenovo/thinkpad/x1-extreme/gen2")
-    ./nix/dotfiles-params.nix
+    ../nix/dotfiles-params.nix
   ];
 
   options = { };
@@ -19,9 +19,13 @@ with pkgs.lib;
       email = "liberatys" + "@" + "hey.com";
     };
 
-    time.timeZone = "Europe/Zurich";
+    time = {
+      timeZone = "Europe/Zurich";
+    };
 
-    console.keyMap = "us";
+    console = {
+      keyMap = "us";
+    };
 
     programs = {
       command-not-found = {
@@ -38,7 +42,9 @@ with pkgs.lib;
       provider = "geoclue2";
     };
 
-    environment.pathsToLink = [ "/share/fish" ];
+    environment = {
+      pathsToLink = [ "/share/fish" ];
+    };
 
     hardware = {
       enableAllFirmware = true;
@@ -64,7 +70,7 @@ with pkgs.lib;
       allowedUsers = [ "@wheel" ];
 
       extraOptions = ''
-        experimental-features = nix-command
+        experimental-features = nix-command flakes
       '';
 
       package = pkgs.nixUnstable;
@@ -112,7 +118,6 @@ with pkgs.lib;
         enable = true;
         package = pkgs.postgresql_11;
       };
-
 
       logind = {
         lidSwitch = "suspend";
@@ -175,49 +180,51 @@ with pkgs.lib;
 
       users."${config.dotfiles.params.username}" = {
         imports = [
-          ./nix/dotfiles-params.nix
-          ./modules/workstation.nix
-          ./modules/dev.nix
-          ./modules/company.nix
+          ../nix/dotfiles-params.nix
+          ../modules/workstation.nix
+          ../modules/dev.nix
 
           # System
-          ./modules/system/security.nix
-          ./modules/system/admin.nix
-          ./modules/system/manage.nix
-          ./modules/system/home.nix
+          ../modules/system/security.nix
+          ../modules/system/admin.nix
+          ../modules/system/manage.nix
+          ../modules/system/home.nix
 
           # Admin
-          ./modules/admin/mail.nix
+          ../modules/admin/mail.nix
 
           # Dev
-          ./modules/dev/fish.nix
-          ./modules/dev/wm.nix
-          ./modules/dev/tmux.nix
-          ./modules/dev/database.nix
-          ./modules/dev/git.nix
-          ./modules/dev/web.nix
-          ./modules/dev/remote.nix
-          ./modules/dev/lazy.nix
-          ./modules/dev/devops.nix
-          ./modules/dev/terminal.nix
+          ../modules/dev/fish.nix
+          ../modules/dev/wm.nix
+          ../modules/dev/tmux.nix
+          ../modules/dev/database.nix
+          ../modules/dev/git.nix
+          ../modules/dev/web.nix
+          ../modules/dev/remote.nix
+          ../modules/dev/lazy.nix
+          ../modules/dev/devops.nix
+          ../modules/dev/terminal.nix
 
-          # Dev - Languages
-          ./modules/dev/languages/c.nix
-          ./modules/dev/languages/go.nix
-          ./modules/dev/languages/rust.nix
-          ./modules/dev/languages/nodejs.nix
-          ./modules/dev/languages/python.nix
-          ./modules/dev/languages/ruby.nix
-          ./modules/dev/languages/nix.nix
+          ## Dev - Languages
+          ../modules/dev/languages/c.nix
+          ../modules/dev/languages/go.nix
+          ../modules/dev/languages/rust.nix
+          ../modules/dev/languages/nodejs.nix
+          ../modules/dev/languages/python.nix
+          ../modules/dev/languages/ruby.nix
+          ../modules/dev/languages/nix.nix
+
+          # work
+          ../modules/work/company.nix
 
           # Browsers
-          ./modules/browsers/qutebrowser.nix
-          ./modules/browsers/librewolf.nix
+          ../modules/browsers/qutebrowser.nix
+          ../modules/browsers/librewolf.nix
 
           # Editors
-          ./modules/editors/emacs.nix
-          ./modules/editors/neovim.nix
-          ./modules/editors/vscode.nix
+          ../modules/editors/emacs.nix
+          ../modules/editors/neovim.nix
+          ../modules/editors/vscode.nix
         ];
 
         dotfiles = {

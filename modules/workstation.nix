@@ -10,14 +10,8 @@ with lib;
     fonts.fontconfig.enable = true;
 
     home.packages = with pkgs; [
-      # Screenshots / Video
-      flameshot
-
       # Utility
       mplayer
-
-      # Office
-      zathura
 
       # Apps
       xclip
@@ -30,48 +24,27 @@ with lib;
       bandwhich
       s-tui
       entr
-      ack
-
-      # Services
-      _1password
-      _1password-gui
-      bitwarden
-      bitwarden-cli
-      librewolf
-
-      # FONTS
-      (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
 
       # CLI
-      aspell
-      aspellDicts.en
-      aspellDicts.en-computers
-      aspellDicts.en-science
       cookiecutter
       cpufrequtils
       cpulimit
       curl
       dnsutils
       dos2unix
-      fd
       ffmpeg
       file
       findutils
       gettext
       gnupg
       graphviz
-      htop
       imagemagick
       iw
-      jq
       mpv
       mtr
       multitail
       ncdu
       nload
-      nmap
-      openssl
-      openconnect
       pandoc
       paperkey
       pdftk
@@ -79,14 +52,11 @@ with lib;
       powertop
       pv
       pwgen
-      sqlite
       sshfs
-      tree
       units
       unzip
       up
       watch
-      weechat
       wget
       yq
       zbar
@@ -104,21 +74,16 @@ with lib;
       enable = true;
       temperature = {
         day = 4500;
-        night = 2500;
+        night = 2800;
       };
 
       provider = "geoclue2";
     };
 
-    manual.manpages.enable = true;
-
-    home.file.".profile" = {
-      text = ''
-        export NIX_PATH=nixpkgs=${pkgs.path}
-        export TMPDIR=/tmp
-        export TMP=$TMPDIR
-      '';
-      executable = true;
+    manual = {
+      manpages = {
+        enable = true;
+      };
     };
   };
 }

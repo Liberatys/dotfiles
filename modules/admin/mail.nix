@@ -16,7 +16,6 @@ with lib;
     programs = {
       neomutt = {
         enable = true;
-
         vimKeys = true;
       };
 
@@ -48,6 +47,7 @@ with lib;
 
           mbsync = {
             enable = true;
+
             create = "maildir";
           };
 
@@ -64,6 +64,7 @@ with lib;
             '';
             showSignature = "append";
           };
+
           passwordCommand = "pass Email/renuo.ch";
 
           smtp = {

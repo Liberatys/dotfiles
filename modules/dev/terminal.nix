@@ -40,17 +40,21 @@ with lib;
       exa
 
       # Tools
+      ack
+      bottom
+      cookiecutter
+      fzf
+      mcfly
+      nodePackages.zx
+      pgcli
       rclone
       ripgrep
       rsync
-      mcfly
-      fzf
       so
-      cookiecutter
-      bottom
-      nodePackages.zx
-      pgcli
       wuzz
+      fd
+      jq
+      tree
 
       # Dev-Tools
       gnumake

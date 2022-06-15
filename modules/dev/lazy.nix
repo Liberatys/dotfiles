@@ -24,7 +24,6 @@ with lib;
 
         settings = {
           reporting = "off";
-          notARepository = "create";
           gui = {
             splitDiff = "always";
             language = "en";

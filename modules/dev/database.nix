@@ -13,8 +13,9 @@ with lib;
   };
 
   config = mkIf config.modules.dev.database.enabled {
-    home.packages = [
-      pkgs.beekeeper-studio
+    home.packages = with pkgs; [
+      beekeeper-studio
+      sqlite
     ];
   };
 }

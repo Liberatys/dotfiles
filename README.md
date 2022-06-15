@@ -13,17 +13,6 @@ This is my NixOs based setup for my development environment.
     make clean
     make build
 
-### Lorem (Virtual Machine)
-
-    nix-env -i spice-vdagentd
-    sudo nix-shell https://github.com/samuela/nixos-up/archive/main.tar.gz
-    git clone https://github.com/Liberatys/dotfiles $HOME/dotfiles
-    cd $HOME/dotfiles
-    make clean
-    make build-lorem
-
-### Lasam (Remote Server)
-
 ## Builds on update
 
     make clean
@@ -35,13 +24,48 @@ This is my NixOs based setup for my development environment.
 
 ## Configuration
 
-### Home-Modules
+### Modules
 
-#### Code
+#### System
 
-#### Operations
+##### Admin
 
-- [git](./home-modules/git.nix)
-- [window management](./home-modules/wm.nix)
-- [tmux](./home-modules/tmux.nix)
-- [nvim](./home-modules/neovim.nix)
+##### Security
+
+##### Manage
+
+##### Home
+
+#### Work
+
+##### Company
+
+#### Admin
+
+##### Mail
+
+#### Dev
+
+##### Fish
+
+##### DevOps
+
+##### Terminal
+
+##### Web
+
+##### Lazy
+
+##### Remote
+
+##### Git
+
+##### Database
+
+##### WM
+
+##### Tmux
+
+#### Browsers
+
+#### Editors

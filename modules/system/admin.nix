@@ -16,7 +16,11 @@ with lib;
   config = mkIf config.modules.system.admin.enabled {
     home.packages = with pkgs; [
       pavucontrol
+      htop
       wireshark
+      nmap
+      openssl
+      openconnect
       arandr
       lshw
       guvcview

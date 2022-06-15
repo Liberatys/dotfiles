@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./../../common.nix
-    ./../../default_machine.nix
+    ./../../shared/common.nix
+    ./../../shared/default_machine.nix
     ./hardware-configuration.nix
   ];
 
@@ -36,7 +36,6 @@
     dotfiles = {
       dev.enabled = true;
       workstation.enabled = true;
-      company.enabled = true;
     };
 
     modules = {
@@ -54,6 +53,12 @@
         };
 
         home = {
+          enabled = true;
+        };
+      };
+
+      work = {
+        company = {
           enabled = true;
         };
       };
