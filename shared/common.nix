@@ -189,6 +189,7 @@ with pkgs.lib;
           ../modules/system/admin.nix
           ../modules/system/manage.nix
           ../modules/system/home.nix
+          ../modules/system/tooling.nix
 
           # Admin
           ../modules/admin/mail.nix

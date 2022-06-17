@@ -62,6 +62,8 @@
 
       libinput = {
         enable = true;
+
+        disableWhileTyping = true;
       };
 
       desktopManager = {

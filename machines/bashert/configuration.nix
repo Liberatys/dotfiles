@@ -44,6 +44,10 @@
           enabled = true;
         };
 
+        tooling = {
+          enabled = true;
+        };
+
         security = {
           enabled = true;
         };

@@ -31,8 +31,8 @@ with lib;
           bars = [ ];
 
           gaps = {
-            inner = 12;
-            outer = 5;
+            inner = 3;
+            outer = 2;
             smartGaps = true;
             smartBorders = "off";
           };
