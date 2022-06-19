@@ -214,6 +214,8 @@ with pkgs.lib;
           ../modules/dev/languages/python.nix
           ../modules/dev/languages/ruby.nix
           ../modules/dev/languages/nix.nix
+          ../modules/dev/languages/java.nix
+          ../modules/dev/languages/markdown.nix
 
           # work
           ../modules/work/company.nix

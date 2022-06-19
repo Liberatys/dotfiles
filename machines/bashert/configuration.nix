@@ -87,7 +87,7 @@
         };
 
         web = {
-          enabled = true;
+          enabled = false;
         };
 
         lazy = {
@@ -138,8 +138,15 @@
           python = {
             enabled = true;
           };
-        };
 
+          java = {
+            enabled = true;
+          };
+
+          markdown = {
+            enabled = true;
+          };
+        };
       };
 
       browsers = {

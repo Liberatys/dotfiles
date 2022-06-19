@@ -45,7 +45,6 @@ with lib;
       multitail
       ncdu
       nload
-      pandoc
       paperkey
       pdftk
       powerstat
