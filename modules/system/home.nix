@@ -20,6 +20,8 @@ with lib;
       EDITOR = "nvim";
     };
 
+    home.file.".vale.ini".source = ../../configs/vale/.vale.ini;
+
     home.file.".profile" = {
       text = ''
         export NIX_PATH=nixpkgs=${pkgs.path}
