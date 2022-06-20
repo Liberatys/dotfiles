@@ -10,6 +10,7 @@
   networking = {
     useDHCP = false;
     interfaces.wlp9s0.useDHCP = true;
+
     wireless = {
       networks = {
         Ocean = {
@@ -87,7 +88,7 @@
         };
 
         web = {
-          enabled = false;
+          enabled = true;
         };
 
         lazy = {

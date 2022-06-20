@@ -171,6 +171,8 @@ with pkgs.lib;
 
       firewall = {
         enable = true;
+
+        allowedUDPPortRanges = [ { from = 32768; to = 60999; } ];
       };
     };
 
