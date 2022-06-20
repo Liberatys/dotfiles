@@ -17,6 +17,7 @@ with lib;
       git-lfs
       gitAndTools.hub
       gitAndTools.gh
+      nodePackages.ungit
     ];
 
     programs.git = {

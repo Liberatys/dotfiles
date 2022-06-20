@@ -21,6 +21,7 @@ with lib;
     };
 
     home.file.".vale.ini".source = ../../configs/vale/.vale.ini;
+    home.file.".railsrc".source = ../../configs/shared/.railsrc;
 
     home.file.".profile" = {
       text = ''
