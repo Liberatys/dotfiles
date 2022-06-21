@@ -16,7 +16,6 @@ with lib;
 
   config = mkIf config.modules.dev.languages.ruby.enabled {
     home.packages = with pkgs; [
-      bundix
     ];
   };
 }

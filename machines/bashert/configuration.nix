@@ -39,6 +39,8 @@
       workstation.enabled = true;
     };
 
+    home.stateVersion = "22.05";
+
     modules = {
       system = {
         admin = {

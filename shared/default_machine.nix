@@ -28,7 +28,6 @@
     tpacpi-bat
     wget
     wpa_supplicant_gui
-    asdf-vm
     alttab
   ];
 
@@ -138,7 +137,6 @@
       };
     };
   };
-
 
   systemd = {
     services = {
