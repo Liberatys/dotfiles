@@ -1,1 +1,3 @@
 systemctl --user restart emacs
+keyboard 1
+screen 25%

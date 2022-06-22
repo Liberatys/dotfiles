@@ -14,8 +14,6 @@ with lib;
     };
 
     home.packages = with pkgs; [
-      # Services
-      gist
       # CI/CD
       # sem => https://github.com/NixOS/nixpkgs/pull/176928
 

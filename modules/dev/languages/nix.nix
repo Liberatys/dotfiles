@@ -18,7 +18,6 @@ with lib;
     home.packages = with pkgs; [
       nix-prefetch
       patchelf
-      nix-top
       nix-prefetch-git
       nixpkgs-review
       node2nix

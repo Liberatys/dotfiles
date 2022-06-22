@@ -7,11 +7,11 @@ with lib;
     dotfiles.workstation.enabled = mkEnableOption "workstation";
   };
   config = mkIf config.dotfiles.workstation.enabled {
-    fonts.fontconfig.enable = true;
-
     home.packages = with pkgs; [
       # Utility
       mplayer
+
+      (pkgs.nerdfonts.override { fonts = [ "FiraCode"]; })
 
       # Apps
       xclip

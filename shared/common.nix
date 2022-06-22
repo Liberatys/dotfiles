@@ -19,6 +19,22 @@ with pkgs.lib;
       email = "liberatys" + "@" + "hey.com";
     };
 
+    fonts = {
+      enableDefaultFonts = true;
+
+      fontconfig = {
+        defaultFonts = {
+          serif = [ "MesloLGS NF" ];
+          sansSerif = [  "MesloLGS NF"  ];
+          monospace = [  "MesloLGS NF"];
+        };
+      };
+    };
+
+    system = {
+      stateVersion = "22.05";
+    };
+
     time = {
       timeZone = "Europe/Zurich";
     };

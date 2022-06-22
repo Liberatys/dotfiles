@@ -23,6 +23,8 @@ with lib;
       openconnect
       arandr
       lshw
+      nix-index
+      nix-tree
       guvcview
       yubikey-manager
       pinentry

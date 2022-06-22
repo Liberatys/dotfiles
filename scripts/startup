@@ -1,5 +1,3 @@
 systemctl --user restart redshift
-keyboard 1
-screen 25%
 
 vale sync

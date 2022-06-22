@@ -26,6 +26,7 @@
   environment.systemPackages = with pkgs; [
     curl
     tpacpi-bat
+    libyaml
     wget
     wpa_supplicant_gui
     alttab

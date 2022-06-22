@@ -42,6 +42,7 @@ with lib;
       # Tools
       ack
       bottom
+      s-tui
       cookiecutter
       fzf
       mcfly

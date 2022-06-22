@@ -32,7 +32,6 @@ with lib;
       bitwarden-cli
 
       # Fonts
-      (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
 
       # Spelling
       aspell

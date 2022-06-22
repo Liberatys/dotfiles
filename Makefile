@@ -4,6 +4,7 @@ lorem_path = "machines/bashert/configuration.nix"
 
 build:
 	sudo nixos-rebuild switch
+	bash scripts/startup
 
 lint:
 	nix-env -i nixpkgs-fmt
