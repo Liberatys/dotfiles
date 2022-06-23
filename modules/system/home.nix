@@ -29,6 +29,8 @@ with lib;
     home.file.".local/share/fonts/MesloLGS NF Regular.ttf".source = ../../configs/fonts/MesloLGS_Regular.ttf;
     home.file.".local/share/fonts/all-the-icons.ttf".source = ../../configs/fonts/all-the-icons.ttf;
     home.file.".local/share/fonts/file-icons.ttf".source = ../../configs/fonts/file-icons.ttf;
+    home.file.".local/share/fonts/feather.ttf".source = ../../configs/fonts/feather.ttf;
+    home.file.".local/share/fonts/material_design_iconic_font.ttf".source = ../../configs/fonts/material_design_iconic_font.ttf;
 
     home.file.".profile" = {
       text = ''
