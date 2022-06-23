@@ -8,19 +8,21 @@ This is my NixOs based setup for my development environment.
 
     sudo nix-shell https://github.com/samuela/nixos-up/archive/main.tar.gz
 
-    git clone https://github.com/Liberatys/dotfiles $HOME/dotfiles
+    git clone https://github.com/Liberatys/dotfiles $HOME/dotfiles --depth 1
     cd $HOME/dotfiles
     make clean
-    make build
+    make link
+    make
 
 ## Builds on update
 
     make clean
-    make build
+    make link
+    make
 
 ## System update
 
-    make upgrade
+    make update
 
 ## Configuration
 
