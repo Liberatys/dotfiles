@@ -1,4 +1,4 @@
 # TODO
 
 - Setup email services
-- Write guide on setup
+- Add margin to the right of date/time (polybar)

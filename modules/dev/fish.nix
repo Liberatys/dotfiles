@@ -44,7 +44,9 @@ with lib;
         "ne" = "cd $HOME/notes/README.org";
         "np" = "push-notes";
 
+        # Mail
         "nm" = "neomutt";
+        "ns" = "mbsync --all";
 
         # Building
         "cb" = "cargo build";
@@ -61,6 +63,8 @@ with lib;
         "gl" = "git pull";
         "gp" = "git push";
         "gcs" = "git commit -s";
+
+        "dkill" = "docker kill $(docker container ls -q)";
 
         # Java
         "gw" = "./gradlew";
@@ -87,6 +91,9 @@ with lib;
         set -x fd '--force --grace-period=0'
 
         set -x FONTAWESOME_NPM_AUTH_TOKEN ' '
+
+        set -x NIXPKGS_ALLOW_UNFREE 1
+        set -x PASSWORD_STORE_DIR $HOME/dotfiles/configs/password-store
 
         set -x GPG_TTY (tty)
         set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)

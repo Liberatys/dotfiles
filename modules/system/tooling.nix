@@ -28,6 +28,7 @@ with lib;
       # Passwords
       _1password
       _1password-gui
+      pass
       bitwarden
       bitwarden-cli
 
