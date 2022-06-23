@@ -22,11 +22,16 @@ with pkgs.lib;
     fonts = {
       enableDefaultFonts = true;
 
+      fonts = with pkgs; [
+        (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Iosevka" ]; })
+      ];
+
       fontconfig = {
+        enable = true;
         defaultFonts = {
-          serif = [ "MesloLGS NF" ];
-          sansSerif = [  "MesloLGS NF"  ];
-          monospace = [  "MesloLGS NF"];
+          serif = [ "Iosevka Nerd Font" "FiraCode Nerd Font"];
+          sansSerif = [ "Iosevka Nerd Font" "FiraCode Nerd Font" ];
+          monospace = [ "Iosevka Nerd Font" "FiraCode Nerd Font" ];
         };
       };
     };

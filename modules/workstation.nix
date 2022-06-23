@@ -11,8 +11,6 @@ with lib;
       # Utility
       mplayer
 
-      (pkgs.nerdfonts.override { fonts = [ "FiraCode"]; })
-
       # Apps
       xclip
       xsel
