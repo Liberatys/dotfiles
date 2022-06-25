@@ -16,10 +16,12 @@ let
 
       notmuch = {
         enable = true;
+
       };
 
       mbsync = {
         enable = true;
+
         create = "maildir";
         remove = "none";
         expunge = "both";
@@ -158,13 +160,15 @@ in
 
             color progress black cyan
 
+            bind index dd noop
+            bind index gT noop
+
             bind attach <return> view-mailcap
             bind attach l view-mailcap
             bind editor <space> noop
             bind pager c imap-fetch-mail
             bind index G last-entry
             bind index g noop
-            bind index gT noop
             bind index gg first-entry
             bind pager,attach h exit
             bind pager j next-line
@@ -208,10 +212,20 @@ in
 
         notmuch = {
           enable = true;
+
+          hooks = {
+            preNew = "mbsync --all";
+          };
         };
 
         mbsync = {
           enable = true;
+
+          extraConfig = ''
+            MaxMessages 200
+
+            ExpireUnread yes
+          '';
         };
 
         msmtp = {

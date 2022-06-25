@@ -1,3 +1,4 @@
 rm -rf $HOME/.aws/*
 rm -rf $HOME/dev/renuo
 rm -rf $HOME/.local
+rm -rf $HOME/Mail

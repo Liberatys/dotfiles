@@ -23,7 +23,11 @@ in
   };
 
   config = mkIf config.modules.editors.emacs.enabled {
-    home.packages = [ doom-emacs ];
+    home.packages = [
+      doom-emacs
+      pkgs.graphviz
+      pkgs.plantuml
+    ];
 
     services = {
       emacs = {
