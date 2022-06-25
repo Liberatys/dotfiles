@@ -78,8 +78,10 @@ in
 
             signature = {
               text = ''
-                Nick Flueckiger
-                nick.flueckiger@renuo.ch
+                Nick Flückiger
+                Software Entwickler, Eidg. FZ Informatiker
+                🌎  Renuo AG   📍  Industriestrasse 44, 8304 Wallisellen
+                📞  +41 44 500 83 50
               '';
               showSignature = "append";
             };
@@ -88,6 +90,10 @@ in
           };
         };
       };
+
+      home.packages = with pkgs; [
+        feh
+      ];
 
       programs = {
         neomutt = {
