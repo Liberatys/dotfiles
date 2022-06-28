@@ -22,6 +22,7 @@ with lib;
 
     home.file.".vale.ini".source = ../../configs/vale/.vale.ini;
     home.file.".railsrc".source = ../../configs/shared/.railsrc;
+    xdg.configFile."alacritty/theme.yml".source = ../../configs/alacritty/theme.yml;
 
     home.file.".local/share/fonts/MesloLGS NF Bold.ttf".source = ../../configs/fonts/MesloLGS_Bold.ttf;
     home.file.".local/share/fonts/MesloLGS NF Bold Italic.ttf".source = ../../configs/fonts/MesloLGS_Bold_Italic.ttf;

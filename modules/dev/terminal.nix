@@ -19,6 +19,17 @@ with lib;
 
         dataLocation = "~/notes/task";
       };
+
+      alacritty = {
+        enable = true;
+
+        settings = {
+          import = [
+            # TODO: Replace with xdg path
+            "${config.xdg.configHome}/alacritty/theme.yml"
+          ];
+        };
+      };
     };
 
     services = {
@@ -29,8 +40,6 @@ with lib;
 
     home.packages = with pkgs; [
       # Applications
-      alacritty
-
       # Services
       awscli2
       heroku

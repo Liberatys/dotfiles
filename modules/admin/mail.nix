@@ -93,6 +93,7 @@ in
 
       home.packages = with pkgs; [
         feh
+        w3m
       ];
 
       programs = {
@@ -166,22 +167,26 @@ in
 
             color progress black cyan
 
-            bind index dd noop
+            bind browser d noop
+            bind index gt noop
+            bind index g noop
             bind index gT noop
+            bind index gg noop
+            bind index dT noop
+            bind index,pager,browser dd noop
+            bind index,pager,browser dt noop
 
             bind attach <return> view-mailcap
             bind attach l view-mailcap
             bind editor <space> noop
             bind pager c imap-fetch-mail
             bind index G last-entry
-            bind index g noop
             bind index gg first-entry
             bind pager,attach h exit
             bind pager j next-line
             bind pager k previous-line
             bind pager l view-attachments
             bind index D delete-message
-            bind index dT noop
             bind index U undelete-message
             bind index L limit
             bind index h noop

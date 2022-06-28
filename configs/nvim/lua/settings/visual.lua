@@ -8,5 +8,5 @@ vim.o.expandtab = true
 vim.o.showmode = false
 
 vim.opt.termguicolors = true
-vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+-- vim.o.background = "dark" -- or "light" for light mode
+vim.cmd([[colorscheme nord]])

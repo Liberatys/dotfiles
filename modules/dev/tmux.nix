@@ -52,7 +52,7 @@ with lib;
       '';
 
       plugins = with pkgs; [
-        pkgs.tmuxPlugins.gruvbox
+        pkgs.tmuxPlugins.nord
         pkgs.tmuxPlugins.tmux-fzf
         pkgs.tmuxPlugins.fzf-tmux-url
         pkgs.tmuxPlugins.extrakto
