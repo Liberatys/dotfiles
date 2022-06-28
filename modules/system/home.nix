@@ -20,10 +20,15 @@ with lib;
       EDITOR = "nvim";
     };
 
+    # HOME
+    home.file.".mailcap".source = ../../configs/mailcap/config;
     home.file.".vale.ini".source = ../../configs/vale/.vale.ini;
     home.file.".railsrc".source = ../../configs/shared/.railsrc;
+
+    # Config
     xdg.configFile."alacritty/theme.yml".source = ../../configs/alacritty/theme.yml;
 
+    # Fonts
     home.file.".local/share/fonts/MesloLGS NF Bold.ttf".source = ../../configs/fonts/MesloLGS_Bold.ttf;
     home.file.".local/share/fonts/MesloLGS NF Bold Italic.ttf".source = ../../configs/fonts/MesloLGS_Bold_Italic.ttf;
     home.file.".local/share/fonts/MesloLGS NF Italic.ttf".source = ../../configs/fonts/MesloLGS_Italic.ttf;

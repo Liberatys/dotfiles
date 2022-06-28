@@ -23,6 +23,7 @@ with lib;
             isDefault = true;
 
             settings = {
+              "browser.display.background_color" = "#000000";
               "browser.startup.homepage" = "https://github.com/";
               "browser.translation.ui.show" = false;
               "browser.urlbar.eventTelemetry.enabled" = false;
@@ -35,6 +36,10 @@ with lib;
               "extensions.ui.dictionary.hidden" = false;
               "extensions.ui.locale.hidden" = false;
               "identity.fxaccounts.enabled" = false;
+
+              "privacy.clearOnShutdown.cookies" = false;
+              "privacy.clearOnShutdown.openWindows" = false;
+              "privacy.clearOnShutdown.siteSettings" = false;
 
               # Password Manager
               "signon.rememberSignons" = false;
