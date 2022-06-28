@@ -25,7 +25,6 @@ with lib;
       userName = config.dotfiles.params.username;
       userEmail = config.dotfiles.params.email;
       aliases = {
-        co = "checkout";
         st = "status -sb";
         cs = "commit -s";
       };

@@ -245,7 +245,7 @@ with pkgs.lib;
 
           # Browsers
           ../modules/browsers/qutebrowser.nix
-          ../modules/browsers/librewolf.nix
+          ../modules/browsers/firefox.nix
 
           # Editors
           ../modules/editors/emacs.nix

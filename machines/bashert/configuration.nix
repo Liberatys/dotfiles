@@ -157,7 +157,7 @@
            enabled = true;
          };
    
-         librewolf = {
+         firefox = {
            enabled = true;
         };
        };

@@ -5,7 +5,7 @@
 (setq user-mail-address "nick.anthony.flueckiger@hey.com")
 
 ; Themes / UI
-(setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-nord)
 (setq doom-font (font-spec :family "FiraCode Nerd Font Mono" :size 20 :weight 'light)
       doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font Mono" :size 20))
 (add-to-list 'default-frame-alist '(fullscreen . maximized))

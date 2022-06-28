@@ -63,6 +63,9 @@ with lib;
         "gl" = "git pull";
         "gp" = "git push";
         "gcs" = "git commit -s";
+        "gd" = "git diff";
+        "gpn" = "git push --no-verify";
+        "gco" = "git checkout -b";
 
         "dkill" = "docker kill $(docker container ls -q)";
 

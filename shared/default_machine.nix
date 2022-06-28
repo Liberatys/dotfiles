@@ -112,6 +112,7 @@
   };
 
   boot = {
+    # TODO: Update LINUX-VERSION (EOF)
     kernelPackages = pkgs.linuxPackages_5_17;
 
     loader = {
