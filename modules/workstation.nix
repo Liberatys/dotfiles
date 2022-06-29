@@ -9,10 +9,8 @@ with lib;
   config = mkIf config.dotfiles.workstation.enabled {
     home.packages = with pkgs; [
       # Utility
-      mplayer
 
       # Apps
-      xclip
       xsel
       macchanger
       gthumb
@@ -27,16 +25,12 @@ with lib;
       cookiecutter
       cpufrequtils
       cpulimit
-      curl
       dnsutils
       dos2unix
-      ffmpeg
       file
       findutils
       gettext
       gnupg
-      graphviz
-      imagemagick
       iw
       mpv
       mtr
@@ -44,43 +38,16 @@ with lib;
       ncdu
       nload
       paperkey
-      pdftk
       powerstat
       powertop
       pv
       pwgen
       sshfs
       units
-      unzip
       up
       watch
-      wget
       yq
       zbar
-      zip
     ];
-
-    programs = {
-      direnv = {
-        enable = true;
-        nix-direnv.enable = true;
-      };
-    };
-
-    services.redshift = {
-      enable = true;
-      temperature = {
-        day = 4500;
-        night = 2800;
-      };
-
-      provider = "geoclue2";
-    };
-
-    manual = {
-      manpages = {
-        enable = true;
-      };
-    };
   };
 }

@@ -67,8 +67,6 @@ with lib;
       i3blocks
       polybar
       dunst
-      feh
-      gnome.nautilus
       unclutter
       xautolock
       xfontsel

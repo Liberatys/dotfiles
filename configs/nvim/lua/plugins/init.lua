@@ -14,6 +14,7 @@ require('packer').startup(function(use)
 	use 'farmergreg/vim-lastplace'
 	use 'folke/which-key.nvim'
 	use 'windwp/nvim-autopairs'
+    use 'kdheepak/lazygit.nvim'
 	use 'folke/trouble.nvim'
 	use 'gpanders/editorconfig.nvim'
 	use 'chentoast/marks.nvim'

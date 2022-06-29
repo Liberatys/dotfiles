@@ -213,6 +213,7 @@ with pkgs.lib;
           ../modules/system/manage.nix
           ../modules/system/home.nix
           ../modules/system/tooling.nix
+          ../modules/system/media.nix
 
           # Admin
           ../modules/admin/mail.nix

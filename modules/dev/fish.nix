@@ -32,6 +32,9 @@ with lib;
         "e" = "nvim";
         "f" = "emacsclient -c";
 
+        # File Manager
+        "fl" = "nnn";
+
         # Navigation
         ".." = "cd ..";
         "..." = "cd ../../";
@@ -69,6 +72,8 @@ with lib;
 
         "dkill" = "docker kill $(docker container ls -q)";
 
+        "ls" = "nnn -de";
+
         # Java
         "gw" = "./gradlew";
 
@@ -97,6 +102,7 @@ with lib;
 
         set -x NIXPKGS_ALLOW_UNFREE 1
         set -x PASSWORD_STORE_DIR $HOME/dotfiles/configs/password-store
+        set -x NNN_OPENER nuke
 
         set -x GPG_TTY (tty)
         set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)

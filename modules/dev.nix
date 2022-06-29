@@ -14,12 +14,8 @@ with lib;
     };
 
     home.packages = with pkgs; [
-      # CI/CD
-      # sem => https://github.com/NixOS/nixpkgs/pull/176928
-
       # Learning
       exercism
-
       # Workflow
       meld
     ];

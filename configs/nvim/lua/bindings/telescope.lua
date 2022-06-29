@@ -8,10 +8,8 @@ vim.api.nvim_set_keymap("", "<leader>cc", ":lua require('telescope.builtin').com
 vim.api.nvim_set_keymap("", "<leader>h", ":lua require('telescope.builtin').help_tags()<CR>", {})
 vim.api.nvim_set_keymap("", "<leader>lv", ":lua require('telescope.builtin').registers()<CR>", {})
 vim.api.nvim_set_keymap("", "<leader>ss", ":lua require('telescope.builtin').spell_suggest()<CR>", {})
-vim.api.nvim_set_keymap("", "<C-G>", ":lua require('telescope.builtin').git_commits()<CR>", {})
 vim.api.nvim_set_keymap("", "<leader>ff", ":vim.lsp.buf.formatting()<CR>", {})
 vim.api.nvim_set_keymap("", "<leader>sp", ":lua require('spectre').open_file_search()<CR>", {})
-
 
 vim.api.nvim_set_keymap("", "<leader>F", ":Format<CR>", {})
 vim.api.nvim_set_keymap("", "<leader>S", ":lua require('spectre').open()<CR>", {})

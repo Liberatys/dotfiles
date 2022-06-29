@@ -41,140 +41,144 @@
 
     home.stateVersion = "22.05";
 
-     modules = {
-       system = {
-         admin = {
-           enabled = true;
-         };
-    
-         tooling = {
-           enabled = true;
-         };
-    
-         security = {
-           enabled = true;
-         };
-    
-         manage = {
-           enabled = true;
-         };
-    
-         home = {
-           enabled = true;
-         };
-       };
-    
-       work = {
-         company = {
-           enabled = true;
-         };
-       };
-    
-       admin = {
-         mail = {
-           enabled = true;
-         };
-       };
-    
-       dev = {
-         fish = {
-           enabled = true;
-         };
-    
-         devops = {
-           enabled = true;
-         };
-   
+    modules = {
+      system = {
+        admin = {
+          enabled = true;
+        };
+
+        media = {
+          enabled = true;
+        };
+
+        tooling = {
+          enabled = true;
+        };
+
+        security = {
+          enabled = true;
+        };
+
+        manage = {
+          enabled = true;
+        };
+
+        home = {
+          enabled = true;
+        };
+      };
+
+      work = {
+        company = {
+          enabled = true;
+        };
+      };
+
+      admin = {
+        mail = {
+          enabled = true;
+        };
+      };
+
+      dev = {
+        fish = {
+          enabled = true;
+        };
+
+        devops = {
+          enabled = true;
+        };
+
         terminal = {
           enabled = true;
         };
-    
-         web = {
-           enabled = true;
-         };
-    
-         lazy = {
-           enabled = true;
-         };
-    
-         remote = {
-           enabled = true;
-         };
-    
-         git = {
-           enabled = true;
-         };
-    
-         database = {
-           enabled = true;
-       };
-   
+
+        web = {
+          enabled = true;
+        };
+
+        lazy = {
+          enabled = true;
+        };
+
+        remote = {
+          enabled = true;
+        };
+
+        git = {
+          enabled = true;
+        };
+
+        database = {
+          enabled = true;
+        };
+
         wm = {
           enabled = true;
-         };
-    
-         tmux = {
-           enabled = true;
-         };
-    
+        };
+
+        tmux = {
+          enabled = true;
+        };
+
         languages = {
           ruby = {
-             enabled = true;
-           };
-    
-           c = {
-             enabled = true;
-           };
-    
-           rust = {
-          enabled = true;
-           };
-    
-           nodejs = {
-             enabled = true;
-           };
-    
-           nix = {
-             enabled = true;
-         };
-   
-           python = {
-             enabled = true;
-           };
-    
-           java = {
-             enabled = true;
-           };
-    
-           markdown = {
-             enabled = true;
-           };
-         };
-       };
-    
-       browsers = {
-         qutebrowser = {
-           enabled = true;
-         };
-   
-         firefox = {
-           enabled = true;
+            enabled = true;
+          };
+
+          c = {
+            enabled = true;
+          };
+
+          rust = {
+            enabled = true;
+          };
+
+          nodejs = {
+            enabled = true;
+          };
+
+          nix = {
+            enabled = true;
+          };
+
+          python = {
+            enabled = true;
+          };
+
+          java = {
+            enabled = true;
+          };
+
+          markdown = {
+            enabled = true;
+          };
         };
-       };
-    
-       editors = {
-         emacs = {
-           enabled = true;
-         };
-    
-         vscode = {
-           enabled = false;
-         };
-    
-         nvim = {
-           enabled = true;
-         };
-       };
+      };
+
+      browsers = {
+        qutebrowser = {
+          enabled = true;
+        };
+
+        firefox = {
+          enabled = true;
+        };
+      };
+
+      editors = {
+        emacs = {
+          enabled = true;
+        };
+
+        vscode = {
+          enabled = false;
+        };
+
+        nvim = {
+          enabled = true;
+        };
+      };
     };
   };
 }

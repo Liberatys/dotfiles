@@ -16,7 +16,6 @@ let
 
       notmuch = {
         enable = true;
-
       };
 
       mbsync = {
@@ -169,9 +168,9 @@ in
 
             bind browser d noop
             bind index gt noop
-            bind index g noop
             bind index gT noop
             bind index gg noop
+            bind index g noop
             bind index dT noop
             bind index,pager,browser dd noop
             bind index,pager,browser dt noop

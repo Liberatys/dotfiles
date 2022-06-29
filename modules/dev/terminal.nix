@@ -20,6 +20,18 @@ with lib;
         dataLocation = "~/notes/task";
       };
 
+      direnv = {
+        enable = true;
+
+        nix-direnv = {
+          enable = true;
+        };
+      };
+
+      nnn = {
+        enable = true;
+      };
+
       alacritty = {
         enable = true;
 
@@ -32,9 +44,25 @@ with lib;
       };
     };
 
+    manual = {
+      manpages = {
+        enable = true;
+      };
+    };
+
     services = {
       lorri = {
         enable = true;
+      };
+
+      redshift = {
+        enable = true;
+        temperature = {
+          day = 4500;
+          night = 2800;
+        };
+
+        provider = "geoclue2";
       };
     };
 
@@ -45,7 +73,6 @@ with lib;
       heroku
 
       # Files
-      nnn
       exa
 
       # Tools
